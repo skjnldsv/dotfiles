@@ -6,8 +6,8 @@ mkdir -p ~/.dotfiles/bin/
 mkdir -p ~/.dotfiles/.config/
 mkdir -p ~/.dotfiles/.config/bspwm/
 mkdir -p ~/.dotfiles/.config/sxhkd/
-mkdir -p ~/.dotfiles/.config/gtk-2.0/
 mkdir -p ~/.dotfiles/.config/gtk-3.0/
+mkdir -p ~/.dotfiles/.local/share/fonts/
 mkdir -p ~/.dotfiles/.colors/
 
 # ZSH
@@ -23,6 +23,9 @@ cp -f ~/.Xresources ~/.dotfiles/
 
 # Colors
 cp -Rf ~/.colors/ ~/.dotfiles/
+
+# Fonts
+cp -f ~/.local/share/fonts/customfontastic.ttf ~/.dotfiles/.local/share/fonts/
 
 # Bspwm
 cp -f ~/.config/bspwm/bspwmrc ~/.dotfiles/.config/bspwm/bspwmrc
