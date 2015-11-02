@@ -1,6 +1,8 @@
 # Skjnldsv's dotfiles
 ------------------------
 ![screenshot](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot1.png)
+![screenshot2](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot2.png)
+![screenshot3](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot3.png)
 ------------------------
 ##Requirements:
 - bspwm
