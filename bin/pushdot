@@ -7,6 +7,7 @@ mkdir -p ~/.dotfiles/.config/
 mkdir -p ~/.dotfiles/.config/bspwm/
 mkdir -p ~/.dotfiles/.config/sxhkd/
 mkdir -p ~/.dotfiles/.config/gtk-3.0/
+mkdir -p ~/.dotfiles/.config/sublime-text-3/Packages/User/
 mkdir -p ~/.dotfiles/.local/share/fonts/
 mkdir -p ~/.dotfiles/.colors/
 
@@ -35,6 +36,9 @@ cp -f ~/.config/sxhkd/sxhkdrc ~/.dotfiles/.config/sxhkd/sxhkdrc
 cp -f ~/.config/Trolltech.conf ~/.dotfiles/.config/Trolltech.conf
 cp -f ~/.config/gtk-3.0/settings.ini ~/.dotfiles/.config/gtk-3.0/settings.ini
 cp -f ~/.gtkrc-2.0 ~/.dotfiles/.gtkrc-2.0
+
+# Sublime text 3
+cp -f ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings ~/.dotfiles/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 
 # LemonBar
 cp -Rf ~/.bar/ ~/.dotfiles/
