@@ -2,11 +2,13 @@
 # Copy and sync dotfiles
 ##################################
 # Directories
-mkdir ~/.dotfiles/bin/
-mkdir ~/.dotfiles/.config/
-mkdir ~/.dotfiles/.config/bspwm/
-mkdir ~/.dotfiles/.config/sxhkd/
-mkdir ~/.dotfiles/.colors/
+mkdir -p ~/.dotfiles/bin/
+mkdir -p ~/.dotfiles/.config/
+mkdir -p ~/.dotfiles/.config/bspwm/
+mkdir -p ~/.dotfiles/.config/sxhkd/
+mkdir -p ~/.dotfiles/.config/gtk-2.0/
+mkdir -p ~/.dotfiles/.config/gtk-3.0/
+mkdir -p ~/.dotfiles/.colors/
 
 # ZSH
 cp -f ~/.zshrc ~/.dotfiles/
@@ -26,6 +28,11 @@ cp -Rf ~/.colors/ ~/.dotfiles/
 cp -f ~/.config/bspwm/bspwmrc ~/.dotfiles/.config/bspwm/bspwmrc
 cp -f ~/.config/sxhkd/sxhkdrc ~/.dotfiles/.config/sxhkd/sxhkdrc
 
+# Theme Gtk & Qt
+cp -f ~/.config/Trolltech.conf ~/.dotfiles/.config/Trolltech.conf
+cp -f ~/.config/gtk-3.0/settings.ini ~/.dotfiles/.config/gtk-3.0/settings.ini
+cp -f ~/.gtkrc-2.0 ~/.dotfiles/.gtkrc-2.0
+
 # LemonBar
 cp -Rf ~/.bar/ ~/.dotfiles/
 
@@ -37,6 +44,3 @@ cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
 
 # Wallpaper
 cp ~/.wallpaper ~/.dotfiles
-
-git commit -m $1
-git push -u origin master
