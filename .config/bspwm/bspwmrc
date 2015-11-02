@@ -1,0 +1,50 @@
+#! /bin/sh
+
+bspc config border_width        0
+bspc config window_gap         20
+
+bspc config split_ratio         0.52
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   true
+
+bspc monitor -d       
+#bspc monitor -d 1 2 3 4 5 6
+
+bspc rule -a chromium desktop=^1
+#bspc rule -a xfce4-terminal desktop=^4
+bspc rule -a thunar desktop=^5
+bspc rule -a subl desktop=^3
+bspc rule -a vlc desktop=^2
+bspc rule -a brackets desktop=^3
+bspc rule -a messengerfordesktop desktop=^6
+bspc rule -a hexchat desktop=^6
+bspc rule -a ristretto floating=on
+bspc rule -a file-roller floating=on
+bspc rule -a keepassx floating=on
+bspc rule -a owncloud floating=off desktop=^7
+
+# Compositor vsync and tear-free
+/usr/bin/compton --backend glx --paint-on-overlay --vsync opengl-swc &
+# Lemonbar
+/home/admin/bin/panel &
+# SysTray
+/usr/bin/trayer --widthtype request --align right --edge top --height 20 --distance 42 --transparent true --alpha 255 --padding 0 &
+# Rtorrent
+/home/admin/bin/startrtorrentinscreen  &
+# Wallpaper
+/usr/bin/feh --bg-scale ~/.wallpaper &
+# Veracrypt
+/usr/bin/veracrypt --background-task &
+# Owncloud client
+/usr/bin/owncloud &
+# Steam
+/usr/bin/steam -silent &
+# Clipboard manager
+/usr/bin/clipit &
+# Chromium
+/usr/bin/chromium &
+# KeepassX
+/usr/bin/keepassx -min -lock &
+# Num Lock ON
+/usr/bin/numlockx &

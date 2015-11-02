@@ -1,0 +1,40 @@
+#! /bin/sh
+# Copy and sync dotfiles
+##################################
+# Directories
+mkdir ~/.dotfiles/bin/
+mkdir ~/.dotfiles/.config/
+mkdir ~/.dotfiles/.config/bspwm/
+mkdir ~/.dotfiles/.config/sxhkd/
+mkdir ~/.dotfiles/.colors/
+
+# ZSH
+cp -f ~/.zshrc ~/.dotfiles/
+cp -f ~/.zshenv ~/.dotfiles/
+cp -f ~/.zprofile ~/.dotfiles/
+
+# VIM
+cp -f ~/.vimrc ~/.dotfiles/
+
+# X 
+cp -f ~/.Xresources ~/.dotfiles/
+
+# Colors
+cp -Rf ~/.colors/ ~/.dotfiles/
+
+# Bspwm
+cp -f ~/.config/bspwm/bspwmrc ~/.dotfiles/.config/bspwm/bspwmrc
+cp -f ~/.config/sxhkd/sxhkdrc ~/.dotfiles/.config/sxhkd/sxhkdrc
+
+# LemonBar
+cp -Rf ~/.bar/ ~/.dotfiles/
+
+# Bin various
+cp -f ~/bin/setwp ~/.dotfiles/bin/setwp
+cp -f ~/bin/pac-man ~/.dotfiles/bin/pac-man
+cp -f ~/bin/invaders ~/.dotfiles/bin/invaders
+cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
+
+
+git commit -m $1
+git push -u origin master
