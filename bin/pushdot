@@ -35,6 +35,8 @@ cp -f ~/bin/pac-man ~/.dotfiles/bin/pac-man
 cp -f ~/bin/invaders ~/.dotfiles/bin/invaders
 cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
 
+# Wallpaper
+cp ~/.wallpaper ~/.dotfiles
 
 git commit -m $1
 git push -u origin master

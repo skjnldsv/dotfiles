@@ -27,7 +27,7 @@ bspc rule -a owncloud floating=off desktop=^7
 # Compositor vsync and tear-free
 /usr/bin/compton --backend glx --paint-on-overlay --vsync opengl-swc &
 # Lemonbar
-/home/admin/bin/panel &
+/home/admin/.bar/panel &
 # SysTray
 /usr/bin/trayer --widthtype request --align right --edge top --height 20 --distance 42 --transparent true --alpha 255 --padding 0 &
 # Rtorrent
