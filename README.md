@@ -11,7 +11,7 @@
 - trayer
 - feh
 
-**I'm starting my own programes on boot in the bspwm config file. Obviously you're not forced to use them. Remember to disable the unused lines!**
+**I'm starting my own programs on boot in the bspwm config file. Obviously you're not forced to use them. Remember to disable the unused lines!**
 
 ##I'm also using:
 - Brackets
