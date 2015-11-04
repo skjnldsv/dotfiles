@@ -10,6 +10,7 @@ mkdir -p ~/.dotfiles/.config/gtk-3.0/
 mkdir -p ~/.dotfiles/.config/sublime-text-3/Packages/User/
 mkdir -p ~/.dotfiles/.config/xfce4/terminal/
 mkdir -p ~/.dotfiles/.config/hexchat/
+mkdir -p ~/.dotfiles/.config/Brackets/
 mkdir -p ~/.dotfiles/.local/share/fonts/
 mkdir -p ~/.dotfiles/.colors/
 
@@ -42,6 +43,9 @@ cp -f ~/.gtkrc-2.0 ~/.dotfiles/.gtkrc-2.0
 
 # Sublime text 3
 cp -f ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings ~/.dotfiles/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+
+# Brackets
+cp -f ~/.config/Brackets/brackets.json ~/.dotfiles/.config/Brackets/brackets.json
 
 # Xfce4-terminal
 cp -f ~/.config/xfce4/terminal/terminalrc ~/.dotfiles/.config/xfce4/terminal/terminalrc
