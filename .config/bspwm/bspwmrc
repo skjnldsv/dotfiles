@@ -14,7 +14,7 @@ bspc monitor -d       
 bspc rule -a chromium desktop=^1
 #bspc rule -a xfce4-terminal desktop=^4
 bspc rule -a thunar desktop=^5
-bspc rule -a subl desktop=^3
+#bspc rule -a subl3 desktop=^3
 bspc rule -a vlc desktop=^2
 bspc rule -a brackets desktop=^3
 bspc rule -a messengerfordesktop desktop=^6
