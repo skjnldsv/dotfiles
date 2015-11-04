@@ -88,7 +88,7 @@ while true;
 		else
 			echo "V%{F$color19}$VOL_ICON $ALSA_VOLUME%{F-}"
 		fi
-	sleep 0.1
+	sleep 0.5
 
 done > $PANEL_FIFO &
 

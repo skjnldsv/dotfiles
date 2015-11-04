@@ -3,26 +3,27 @@ set shiftwidth=4            " Tab Options
 set tabstop=4               " set expandtab "Enter spaces instead of tabs.
 
 " {{{ Plugins
-call plug#begin('~/.vim/plugged')
-    Plug 'tpope/vim-sensible'                   " sensible defaults.
-    Plug 'bling/vim-airline'                    " Status line
-    Plug 'jeffkreeftmeijer/vim-numbertoggle'    " Auto relative number toggling
-    Plug 'airblade/vim-gitgutter'               " Live git changes
-    Plug 'tpope/vim-fugitive'                   " Complement git in vim - todo: learn this.
-    Plug 'tpope/vim-sleuth'                     " Auto spacing/indenting conformity to files
-    Plug 'terryma/vim-multiple-cursors'         " Muliple cursors, akin to sublime text
-    Plug 'jiangmiao/auto-pairs'                 " auto-pairs(brackets/quotes)
-    Plug 'scrooloose/nerdtree',                 {'on': ['NERDTreeToggle','NERDTreeFind']} " Side panel file browser.
+call vundle#begin()
+    Plugin 'tpope/vim-sensible'                   " sensible defaults.
+    Plugin 'bling/vim-airline'                    " Status line
+    Plugin 'jeffkreeftmeijer/vim-numbertoggle'    " Auto relative number toggling
+    Plugin 'airblade/vim-gitgutter'               " Live git changes
+    Plugin 'tpope/vim-fugitive'                   " Complement git in vim - todo: learn this.
+    Plugin 'tpope/vim-sleuth'                     " Auto spacing/indenting conformity to files
+    Plugin 'terryma/vim-multiple-cursors'         " Muliple cursors, akin to sublime text
+    Plugin 'jiangmiao/auto-pairs'                 " auto-pairs(brackets/quotes)
+    Plugin 'scrooloose/nerdtree',                 {'on': ['NERDTreeToggle','NERDTreeFind']} " Side panel file browser.
 
-    Plug 'Valloric/YouCompleteMe',              { 'do': './install.sh --clang-completer --system-libclang --omnisharp-completer', 'for': ['cpp', 'c', 'cs', 'python']}
-    Plug 'rdnetto/YCM-Generator', 'stable'      " Generate ycm files - :YcmGenerateConfig
+    "Plugin 'Valloric/YouCompleteMe',              { 'do': './install.sh --clang-completer --system-libclang --omnisharp-completer', 'for': ['cpp', 'c', 'cs', 'python']}
+    "Plugin 'rdnetto/YCM-Generator', 'stable'      " Generate ycm files - :YcmGenerateConfig
 
-    Plug 'mattn/emmet-vim',                     {'for': ['html', 'xml', 'xsl', 'xslt', 'xsd', 'css', 'sass', 'scss', 'less', 'mustache', 'php']}
-    Plug 'Valloric/MatchTagAlways',             {'for': ['html', 'xhtml', 'xml', 'jinja']}
+    Plugin 'mattn/emmet-vim',                     {'for': ['html', 'xml', 'xsl', 'xslt', 'xsd', 'css', 'sass', 'scss', 'less', 'mustache', 'php']}
+    Plugin 'Valloric/MatchTagAlways',             {'for': ['html', 'xhtml', 'xml', 'jinja']}
 
-    Plug 'junegunn/fzf',                        {'dir': '~/fzf', 'do': 'yes\| ./install'} " based fuzzy search.
+    Plugin 'junegunn/fzf',                        {'dir': '~/fzf', 'do': 'yes\| ./install'} " based fuzzy search.
+    Plugin 'chriskempson/base16-vim',
 
-call plug#end()
+call vundle#end()            " required
 " }}}
 
 " {{{ Plugin settings
@@ -108,6 +109,9 @@ set smartcase
 
 " Colors
 set t_Co=256
+let base16colorspace=256
+colorscheme base16-default
+set background=dark
 
 " Encoding
 set encoding=utf-8

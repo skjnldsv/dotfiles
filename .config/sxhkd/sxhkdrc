@@ -4,25 +4,18 @@ XF86AudioRaiseVolume
 	pulseaudio-ctl up
 XF86AudioLowerVolume
 	pulseaudio-ctl down
-
 XF86AudioMute
 	pulseaudio-ctl mute
-
 XF86MonBrightnessUp
 	xbacklight -inc 10%
-
 XF86MonBrightnessDown
 	xbacklight -dec 10%
-
 XF86AudioPlay
 	mpc toggle
-
 XF86AudioNext
 	mpc next
-
 XF86AudioPrev
 	mpc prev
-
 Print
 	xfce4-screenshooter -r -s /home/admin/Images/
 

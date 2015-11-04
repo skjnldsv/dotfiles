@@ -8,8 +8,11 @@ mkdir -p ~/.dotfiles/.config/bspwm/
 mkdir -p ~/.dotfiles/.config/sxhkd/
 mkdir -p ~/.dotfiles/.config/gtk-3.0/
 mkdir -p ~/.dotfiles/.config/sublime-text-3/Packages/User/
+mkdir -p ~/.dotfiles/.config/xfce4/terminal/
+mkdir -p ~/.dotfiles/.config/hexchat/
 mkdir -p ~/.dotfiles/.local/share/fonts/
 mkdir -p ~/.dotfiles/.colors/
+
 
 # ZSH
 cp -f ~/.zshrc ~/.dotfiles/
@@ -19,10 +22,10 @@ cp -f ~/.zprofile ~/.dotfiles/
 # VIM
 cp -f ~/.vimrc ~/.dotfiles/
 
-# X 
+# X
 cp -f ~/.Xresources ~/.dotfiles/
 
-# Colors
+# Colors (base16)
 cp -Rf ~/.colors/ ~/.dotfiles/
 
 # Fonts
@@ -39,6 +42,12 @@ cp -f ~/.gtkrc-2.0 ~/.dotfiles/.gtkrc-2.0
 
 # Sublime text 3
 cp -f ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings ~/.dotfiles/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+
+# Xfce4-terminal
+cp -f ~/.config/xfce4/terminal/terminalrc ~/.dotfiles/.config/xfce4/terminal/terminalrc
+
+# Hexchat colors (base16)
+cp -f ~/.config/hexchat/colors.conf ~/.dotfiles/.config/hexchat/colors.conf
 
 # LemonBar
 cp -Rf ~/.bar/ ~/.dotfiles/
