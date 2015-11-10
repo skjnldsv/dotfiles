@@ -93,4 +93,4 @@ ICON_VOLMAX=""
 # Set an item as "urgent" (aka red, underlined and flashy)
 function urgent {
 	echo "%{F$COLOR_URGENT_FG}%{B$COLOR_URGENT_BG}%{+u}%{U$color01}$1%{U-}%{-u}%{B-}%{F-}"
-}  
+}

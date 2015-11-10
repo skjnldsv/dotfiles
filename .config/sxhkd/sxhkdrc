@@ -116,7 +116,7 @@ super + Return
 	xfce4-terminal
 
 super + space
-    dmenu_run -l 0 -x 0 -y 42 -w 1920 -h 28 -fn "Droid Sans-10" -nb "#181818" -nf "#d8d8d8" -sb "#585858" -sf "#7cafc2" -p ">" -q -i
+    dmenu_run -l 0 -x 0 -y 42 -w 1920 -h 28 -fn "Droid Sans-10" -nb "#181818" -nf "#d8d8d8" -sb "#585858" -sf "#7cafc2" -p ">" -q -i -class "dmenu"
 
 # make sxhkd reload its configuration files:
 super + Escape

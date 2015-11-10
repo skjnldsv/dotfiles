@@ -4,5 +4,8 @@
     "themes.theme": "default-dark",
     "language.fileExtensions": {
         "": "bash"
-    }
+    },
+    "useTabChar": true,
+    "linting.collapsed": true,
+	"wordWrap": false
 }

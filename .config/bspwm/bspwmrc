@@ -13,7 +13,7 @@ bspc monitor -d       
 
 bspc rule -a chromium desktop=^1
 #bspc rule -a xfce4-terminal desktop=^4
-bspc rule -a thunar desktop=^5
+#bspc rule -a thunar desktop=^5
 #bspc rule -a subl3 desktop=^3
 bspc rule -a vlc desktop=^2
 bspc rule -a brackets desktop=^3
@@ -25,7 +25,8 @@ bspc rule -a keepassx floating=on
 bspc rule -a owncloud floating=off desktop=^7
 
 # Compositor vsync and tear-free
-/usr/bin/compton --backend glx --paint-on-overlay --vsync opengl-swc &
+#/usr/bin/compton --backend glx --paint-on-overlay --vsync opengl-swc &
+/usr/bin/compton --config .config/compton.conf -b &
 # Lemonbar
 /home/admin/.bar/panel &
 # SysTray

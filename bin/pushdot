@@ -32,6 +32,9 @@ cp -Rf ~/.colors/ ~/.dotfiles/
 # Fonts
 cp -f ~/.local/share/fonts/customfontastic.ttf ~/.dotfiles/.local/share/fonts/
 
+# Compton
+cp -f ~/.config/compton.conf ~/.dotfiles/.config/
+
 # Bspwm
 cp -f ~/.config/bspwm/bspwmrc ~/.dotfiles/.config/bspwm/bspwmrc
 cp -f ~/.config/sxhkd/sxhkdrc ~/.dotfiles/.config/sxhkd/sxhkdrc
