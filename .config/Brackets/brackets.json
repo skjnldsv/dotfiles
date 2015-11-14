@@ -7,5 +7,5 @@
     },
     "useTabChar": true,
     "linting.collapsed": true,
-	"wordWrap": false
+    "wordWrap": true
 }
