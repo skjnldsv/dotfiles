@@ -68,29 +68,37 @@ COLOR_TITLE_FG=$color20
 COLOR_TITLE_BG=$color18
 COLOR_STATUS_FG=$color20
 COLOR_STATUS_BG=$color18
+COLOR_LOW_FG=#88d8d8d8
+COLOR_ICONS=#aad8d8d8
 
 ########################
 # Custom font 2
-ICON_WARN=""
-ICON_LOCK=""
-ICON_RAM="%{F$color05}%{F-}"
-ICON_ROOT="%{F$color17}%{F-}"
-ICON_RAID="%{F$color02}%{F-}"
-ICON_WIN="%{F$color04}%{F-}"
-ICON_CPU="%{F$color16}%{F-}"
-ICON_NETUPDOWN="%{F$color04}%{F-}"
-ICON_TEMP="%{F$color03}%{F-}"
-ICON_PLAY="%{F$color05}%{F-}"
-ICON_PAUSE="%{F$color03}%{F-}"
-ICON_POWER=""
-ICON_REBOOT=""
-ICON_CLOCK="%{F$color17}%{F-}"
-ICON_VOLMIN=""
-ICON_VOLMED=""
-ICON_VOLMAX=""
+ICON_WARN="%{F$COLOR_ICONS}%{F-}"
+ICON_LOCK="%{F$COLOR_ICONS}%{F-}"
+ICON_RAM="%{F$COLOR_ICONS}%{F-}"
+ICON_ROOT="%{F$COLOR_ICONS}%{F-}"
+ICON_RAID="%{F$COLOR_ICONS}%{F-}"
+ICON_WIN="%{F$COLOR_ICONS}%{F-}"
+ICON_CPU="%{F$COLOR_ICONS}%{F-}"
+ICON_NETUPDOWN="%{F$COLOR_ICONS}%{F-}"
+ICON_TEMP="%{F$COLOR_ICONS}%{F-}"
+ICON_PLAY="%{F$COLOR_ICONS}%{F-}"
+ICON_PAUSE="%{F$COLOR_ICONS}%{F-}"
+ICON_POWER="%{F$COLOR_ICONS}%{F-}"
+ICON_REBOOT="%{F$COLOR_ICONS}%{F-}"
+ICON_CLOCK="%{F$COLOR_ICONS}%{F-}"
+ICON_VOLMIN="%{F$COLOR_ICONS}%{F-}"
+ICON_VOLMED="%{F$COLOR_ICONS}%{F-}"
+ICON_VOLMAX="%{F$COLOR_ICONS}%{F-}"
+ICON_PAC="%{F$COLOR_ICONS}%{F-}"
 
 ########################
 # Set an item as "urgent" (aka red, underlined and flashy)
 function urgent {
-	echo "%{F$COLOR_URGENT_FG}%{B$COLOR_URGENT_BG}%{+u}%{U$color01}$1%{U-}%{-u}%{B-}%{F-}"
+	echo "%{F$COLOR_URGENT_FG}%{B$COLOR_URGENT_BG}%{+u}%{U$color01}$@%{U-}%{-u}%{B-}%{F-}"
+}
+
+# Set an item as low (aka transparent)
+function low {
+	echo "%{F$COLOR_LOW_FG}$@%{F-}"
 }

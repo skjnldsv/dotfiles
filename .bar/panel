@@ -66,27 +66,25 @@ while true;
             		if [ $ALSA_VOLUME -ge 70 -a $ALSA_VOLUME -lt 90 ]
 		then
 			VOL_ICON=$ICON_VOLMAX
-			COLOR=$color05
-			VOL="V%{F$COLOR}$VOL_ICON%{F-} $ALSA_VOLUME"
+			VOL="V$VOL_ICON $ALSA_VOLUME"
 		fi
 		if [ $ALSA_VOLUME -gt 0 -a $ALSA_VOLUME -lt 70 ]
 		then
 			VOL_ICON=$ICON_VOLMED
-			COLOR=$color02
-			VOL="V%{F$COLOR}$VOL_ICON%{F-} $ALSA_VOLUME"
+			VOL="V$VOL_ICON $ALSA_VOLUME"
 		fi
 		if [ $ALSA_VOLUME -eq 0 ]
 		then
 			VOL_ICON=$ICON_VOLMIN
 			COLOR=$color19
-			VOL="V%{F$COLOR}$VOL_ICON%{F-} $ALSA_VOLUME"
+			VOL=V$(low "$VOL_ICON $ALSA_VOLUME")
 		fi
 
 		if [ $ALSA_STATE ]
 		then
 			echo $VOL
 		else
-			echo "V%{F$color19}$VOL_ICON $ALSA_VOLUME%{F-}"
+			echo "V$(low "$VOL_ICON $ALSA_VOLUME")"
 		fi
 	sleep 0.5
 
@@ -95,6 +93,20 @@ done > $PANEL_FIFO &
 ########################
 # CPU + HDD + NETMONITOR
 conky -c $(dirname $0)/lemonbar_conky > "$PANEL_FIFO" &
+
+########################
+# UPDATES
+while true;
+	do
+		update_count=$(pacman -Qu | wc -l)
+		if [ $update_count -ne 0 ];
+		then
+			echo "U $update_count updates"
+		else
+			echo "U $(low $update_count updates)"
+		fi;
+	sleep 60
+done > $PANEL_FIFO &
 
 ########################
 # CPU Temp
