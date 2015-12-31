@@ -42,7 +42,7 @@ while read -r line ; do
 
 		U*)
 			# cpu temp
-			updates="$PADDING$ICON_PAC${line#?}$PADDING"
+			updates="%{A:xfce4-terminal --command='yaourt -Suua' --drop-down &:}$PADDING$ICON_PAC${line#?}$PADDING%{A}"
 			;;
 
 		X*)

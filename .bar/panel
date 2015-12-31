@@ -35,17 +35,17 @@ xtitle -sf 'T%s' > "$PANEL_FIFO" &
 #zscroll -n -u -b "L " -d 0.2 -M "sh plexstatus.sh status" -m "No playing" -b "L " -s 0 -m "playing" -b "L$ICON_PLAY " -s 1 -m "paused" -b "L$ICON_PAUSE " -s 0 "sh plexstatus.sh" > "$PANEL_FIFO" &
 
 ########################
-# POWER 
+# POWER
 echo P$ICON_POWER > $PANEL_FIFO &
 
 ########################
-# REBOOT 
+# REBOOT
 echo R$ICON_REBOOT > $PANEL_FIFO &
 
 ########################
 # CLOCK
 while true;
-	do 
+	do
 		echo C$ICON_CLOCK $(date | grep  -Eo '[[:digit:]]{1,2}:[[:digit:]]{1,2}:[[:digit:]]{1,2}');
 	sleep 1;
 done > "$PANEL_FIFO" &
@@ -60,31 +60,39 @@ while true;
 		if [ $ALSA_VOLUME -ge 90 ]
 		then
 			VOL_ICON=$ICON_VOLMAX
-			COLOR=$color05
-			VOL=V$(urgent "$VOL_ICON $ALSA_VOLUME")
+			VOL=V$(urgent $VOL_ICON $ALSA_VOLUME)
 		fi
-            		if [ $ALSA_VOLUME -ge 70 -a $ALSA_VOLUME -lt 90 ]
+        if [ $ALSA_VOLUME -ge 70 -a $ALSA_VOLUME -lt 90 ]
 		then
 			VOL_ICON=$ICON_VOLMAX
 			VOL="V$VOL_ICON $ALSA_VOLUME"
 		fi
-		if [ $ALSA_VOLUME -gt 0 -a $ALSA_VOLUME -lt 70 ]
+        if [ $ALSA_VOLUME -ge 50 -a $ALSA_VOLUME -lt 70 ]
 		then
 			VOL_ICON=$ICON_VOLMED
 			VOL="V$VOL_ICON $ALSA_VOLUME"
 		fi
-		if [ $ALSA_VOLUME -eq 0 ]
+		if [ $ALSA_VOLUME -ge 30 -a $ALSA_VOLUME -lt 50 ]
+		then
+			VOL_ICON=$ICON_VOLLOW
+			VOL="V$VOL_ICON $ALSA_VOLUME"
+		fi
+		if [ $ALSA_VOLUME -gt 0 -a $ALSA_VOLUME -lt 30 ]
 		then
 			VOL_ICON=$ICON_VOLMIN
-			COLOR=$color19
-			VOL=V$(low "$VOL_ICON $ALSA_VOLUME")
+			VOL="V$VOL_ICON $ALSA_VOLUME"
+		fi
+		if [ $ALSA_VOLUME -eq 0 ]
+		then
+			VOL_ICON=$ICON_VOLMUTE
+			VOL=V$(low $VOL_ICON $ALSA_VOLUME)
 		fi
 
 		if [ $ALSA_STATE ]
 		then
 			echo $VOL
 		else
-			echo "V$(low "$VOL_ICON $ALSA_VOLUME")"
+			echo "V$(low $ICON_VOLMUTE $ALSA_VOLUME)"
 		fi
 	sleep 0.5
 
@@ -98,7 +106,7 @@ conky -c $(dirname $0)/lemonbar_conky > "$PANEL_FIFO" &
 # UPDATES
 while true;
 	do
-		update_count=$(pacman -Qu | wc -l)
+		update_count=$(yaourt -Quua | wc -l)
 		if [ $update_count -ne 0 ];
 		then
 			echo "U $update_count updates"
@@ -111,7 +119,7 @@ done > $PANEL_FIFO &
 ########################
 # CPU Temp
 while true;
-	do 
+	do
 		tempcpu=$(sensors | grep Physical | cut -c18-19)
 		tempgpu=$(nvidia-smi -q -d temperature | grep "Current Temp" | cut -c 39-40)
 		if [ $tempcpu -gt $CPU_TEMP_WARN_LEVEL ]
@@ -132,7 +140,7 @@ done > $PANEL_FIFO &
 ########################
 # IP
 while true;
-	do 
+	do
 		IP=$(wget --timeout=2 --tries=2 https://duckduckgo.com/\?q\=whats+my+ip -q -O - | grep  -Eo '[[:digit:]]{1,3}(\.[[:digit:]]{1,3}){3}')
 		#IP=$(wget --timeout=5 --tries=2 -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
 		if [ $IP ]
@@ -145,6 +153,5 @@ while true;
 
 done > $PANEL_FIFO &
 
-cat "$PANEL_FIFO" | panel_bar | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -f "$ICON_FONT1" -f "$ICON_FONT2" -f "$ICON_FONT_MENU" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -u 2  | zsh &
-
+cat "$PANEL_FIFO" | panel_bar | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -f "$ICON_FONT1" -f "$ICON_FONT2" -f "$ICON_FONT_MENU" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -u 2 -o -1 -a 20 | zsh 
 wait
