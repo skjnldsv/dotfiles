@@ -17,6 +17,7 @@ XF86AudioNext
 XF86AudioPrev
 	mpc prev
 Print
+	xfce4-screenshooter -r -s /home/admin/Images/
 
 # terminal emulator
 super + Return

@@ -30,18 +30,13 @@ while read -r line ; do
 			volume="%{A4:pulseaudio-ctl up:}%{A5:pulseaudio-ctl down:}$PADDING${line#?}$PADDING%{A}%{A}"
 			;;
 
-		L*)
-			# player
-			playing="%{B$COLOR_STATUS_BG}%{F$COLOR_STATUS_FG}$PADDING${line#?}$PADDING%{F-}%{B-}"
-			;;
-
 		D*)
 			# cpu temp
 			systemp="$PADDING$ICON_TEMP${line#?}$PADDING"
 			;;
 
 		U*)
-			# cpu temp
+			# updates
 			updates="%{A:xfce4-terminal --command='yaourt -Suua' --drop-down &:}$PADDING$ICON_PAC${line#?}$PADDING%{A}"
 			;;
 
@@ -95,14 +90,14 @@ while read -r line ; do
 			netusage="$PADDING$netdown $ICON_NETUPDOWN $netup$PADDING"
 			;;
 
-		P*)
-			# power
-			power="%{A3:oblogout:}$PADDING${line#?}$PADDING%{A}"
+		L*)
+			# lock
+			lock="%{A1:lock:}$PADDING${line#?}$PADDING%{A}"
 			;;
 
-		R*)
-			# reboot
-			reboot="%{A3:reboot:}$PADDING${line#?}$PADDING%{A}"
+		P*)
+			# power
+			power="%{A1:oblogout:}$PADDING${line#?}$PADDING%{A}"
 			;;
 
 		W*)
@@ -154,5 +149,5 @@ while read -r line ; do
 			;;
 	esac
 	#printf "%s\n" "%{T4}%{l}${wm_infos}%{T-}${title}%{c}${netusage}%{r}${playing}${hdd}${cpu}${systemp}${ram}${ip}${volume}${clock}${power}${reboot}"
-	printf "%s\n" "%{T4}%{l}%{A4:bspc desktop -f next:}%{A5:bspc desktop -f prev:}${wm_infos}%{A}%{A}%{T-}${title}%{c}${netusage}%{r}${hdd}${cpu}${systemp}${ram}${updates}${ip}${volume}${clock}${power}${reboot}"
+	printf "%s\n" "%{T4}%{l}%{A4:bspc desktop -f next:}%{A5:bspc desktop -f prev:}${wm_infos}%{A}%{A}%{T-}${title}%{c}${netusage}%{r}${hdd}${cpu}${systemp}${ram}${updates}${ip}${volume}${clock}${lock}${power}"
 done

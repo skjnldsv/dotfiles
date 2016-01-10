@@ -35,12 +35,12 @@ xtitle -sf 'T%s' > "$PANEL_FIFO" &
 #zscroll -n -u -b "L " -d 0.2 -M "sh plexstatus.sh status" -m "No playing" -b "L " -s 0 -m "playing" -b "L$ICON_PLAY " -s 1 -m "paused" -b "L$ICON_PAUSE " -s 0 "sh plexstatus.sh" > "$PANEL_FIFO" &
 
 ########################
-# POWER
-echo P$ICON_POWER > $PANEL_FIFO &
+# LOCK
+echo L$ICON_LOCK > $PANEL_FIFO &
 
 ########################
-# REBOOT
-#echo R$ICON_REBOOT > $PANEL_FIFO &
+# POWER
+echo P$ICON_POWER > $PANEL_FIFO &
 
 ########################
 # CLOCK
