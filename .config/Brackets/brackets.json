@@ -1,0 +1,11 @@
+{
+    "fonts.fontSize": "12px",
+    "fonts.fontFamily": "'SourceCodePro-Medium', ＭＳ ゴシック, 'MS Gothic', monospace",
+    "themes.theme": "default-dark",
+    "language.fileExtensions": {
+        "": "bash"
+    },
+    "useTabChar": true,
+    "linting.collapsed": true,
+    "wordWrap": true
+}

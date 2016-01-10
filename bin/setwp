@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+echo $1
+
+ln -sf $1 ~/.wallpaper
+
+feh --bg-fill ~/.wallpaper

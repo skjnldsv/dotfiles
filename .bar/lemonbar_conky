@@ -1,0 +1,21 @@
+#! /bin/conky
+# Conky for external bar 
+################################
+
+# Settings
+################################
+background no
+update_interval 0.5
+total_run_times 0
+override_utf8_locale yes
+short_units yes
+uppercase no
+out_to_console yes
+out_to_x no
+if_up_strictness address
+format_human_readable true
+
+# Data
+################################
+TEXT
+X ${cpu}:${mem}:${fs_used_perc /}:${fs_used_perc /raid}:${fs_used_perc /Windows}:${if_up tun0}${downspeed tun0}:${upspeed tun0}${else}down:down${endif}:${diskio sda}:${diskio sdb}:${diskio sdc}:${diskio sdd}:${diskio sde}:${diskio sdf} 

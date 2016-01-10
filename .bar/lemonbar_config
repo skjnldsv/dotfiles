@@ -1,0 +1,105 @@
+#! /bin/zsh
+# Lemonbar Config file
+########################
+
+########################
+PANEL_FIFO=/tmp/panel-fifo
+PANEL_HEIGHT=42
+PANEL_FONT_FAMILY="Droid Sans:size=9"
+ICON_FONT1="FontAwesome:size=11"
+ICON_FONT2="customfontastic:size=11"
+ICON_FONT_MENU="FontAwesome:size=13"
+
+DISK_SPACE_WARN_LEVEL=95
+CPU_WARN_LEVEL=80
+CPU_TEMP_WARN_LEVEL=70
+GPU_TEMP_WARN_LEVEL=70
+TITLE_MAX_LENGTH=80
+
+# Separator between items in the bar
+PADDING="  "
+
+########################
+# base16 Colors
+color00="181818" # Base 00 - Black
+color01="ab4642" # Base 08 - Red
+color02="a1b56c" # Base 0B - Green
+color03="f7ca88" # Base 0A - Yellow
+color04="7cafc2" # Base 0D - Blue
+color05="ba8baf" # Base 0E - Magenta
+color06="86c1b9" # Base 0C - Cyan
+color07="d8d8d8" # Base 05 - White
+color08="585858" # Base 03 - Bright Black
+color09=$color01  # Base 08 - Bright Red
+color10=$color02  # Base 0B - Bright Green
+color11=$color03  # Base 0A - Bright Yellow
+color12=$color04  # Base 0D - Bright Blue
+color13=$color05  # Base 0E - Bright Magenta
+color14=$color06  # Base 0C - Bright Cyan
+color15="f8f8f8" # Base 07 - Bright White
+color16="dc9656" # Base 09
+color17="a16946" # Base 0F
+color18="282828" # Base 01
+color19="383838" # Base 02
+color20="b8b8b8" # Base 04
+color21="e8e8e8" # Base 06
+
+COLOR_FOREGROUND="#$color07"
+COLOR_BACKGROUND="#aa$color00"
+COLOR_ACTIVE_MONITOR_FG="#$color15"
+COLOR_ACTIVE_MONITOR_BG="#aa$color18"
+COLOR_INACTIVE_MONITOR_FG="#$color07"
+COLOR_INACTIVE_MONITOR_BG="#aa$color00"
+COLOR_FOCUSED_OCCUPIED_FG="#$color07"
+COLOR_FOCUSED_OCCUPIED_BG="#aa$color08"
+COLOR_FOCUSED_FREE_FG="#$color04"
+COLOR_FOCUSED_FREE_BG="#aa$color08"
+COLOR_FOCUSED_URGENT_FG="#$color18"
+COLOR_FOCUSED_URGENT_BG="#aa$color01"
+COLOR_OCCUPIED_FG="#$color20"
+COLOR_OCCUPIED_BG="#aa$color18"
+COLOR_FREE_FG="#$color07"
+COLOR_FREE_BG="#aa$color00"
+COLOR_URGENT_FG="#$color01"
+COLOR_URGENT_BG="#aa$color00"
+COLOR_LAYOUT_FG="#$color20"
+COLOR_LAYOUT_BG="#aa$color18"
+COLOR_TITLE_FG="#$color20"
+COLOR_TITLE_BG="#aa$color18"
+COLOR_STATUS_FG="#$color20"
+COLOR_STATUS_BG="#aa$color18"
+COLOR_LOW_FG="#aa$color07"
+COLOR_ICONS_FG="#88$color07"
+
+########################
+# Custom font 2
+ICON_WARN="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_RAM="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_ROOT="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_WIN="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_RAID="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_CPU="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_NETUPDOWN="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_TEMP="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_PLAY="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_PAUSE="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_POWER=""
+ICON_REBOOT=""
+ICON_CLOCK="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_VOLMUTE="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_VOLMIN="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_VOLLOW="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_VOLMED="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_VOLMAX="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_PAC="%{F$COLOR_ICONS_FG}%{F-}"
+
+########################
+# Set an item as "urgent" (aka red, underlined and flashy)
+function urgent {
+	echo "%{F$COLOR_URGENT_FG}%{B$COLOR_URGENT_BG}%{+u}%{U$COLOR_URGENT_FG}$@%{U-}%{-u}%{B-}%{F-}"
+}
+
+# Set an item as low (aka transparent)
+function low {
+	echo "%{F$COLOR_LOW_FG}$@%{F-}"
+}
