@@ -1,76 +1,48 @@
-#! /bin/sh
-# Copy and sync dotfiles
-##################################
-# Directories
-mkdir -p ~/.dotfiles/bin/
-mkdir -p ~/.dotfiles/.config/
-mkdir -p ~/.dotfiles/.config/bspwm/
-mkdir -p ~/.dotfiles/.config/sxhkd/
-mkdir -p ~/.dotfiles/.config/gtk-3.0/
-mkdir -p ~/.dotfiles/.config/sublime-text-3/Packages/User/
-mkdir -p ~/.dotfiles/.config/xfce4/terminal/
-mkdir -p ~/.dotfiles/.config/hexchat/
-mkdir -p ~/.dotfiles/.config/Brackets/
-mkdir -p ~/.dotfiles/.local/share/fonts/
-mkdir -p ~/.dotfiles/.colors/
-mkdir -p ~/.dotfiles/.themes/Oblogout/
-mkdir -p ~/.dotfiles/etc/
+#!/bin/bash
 
-# ZSH
-cp -f ~/.zshrc ~/.dotfiles/
-cp -f ~/.zshenv ~/.dotfiles/
-cp -f ~/.zprofile ~/.dotfiles/
+# Dependencies: imagemagick, i3lock-color-git, scrot
 
-# VIM
-cp -f ~/.vimrc ~/.dotfiles/
+IMAGE=$(mktemp).png
+TEXT="Type password to unlock"
 
-# X
-cp -f ~/.Xresources ~/.dotfiles/
+# get path where the script is located
+# its used for the lock icon
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd`
+popd > /dev/null
+ 
+# l10n support
+case $LANG in
+    fr_* ) TEXT="Entrez votre mot de passe" ;; # Français
+    es_* ) TEXT="Ingrese su contraseña" ;; # Española
+    pl_* ) TEXT="Podaj hasło" ;; # Polish
+esac
 
-# Colors (base16)
-cp -Rf ~/.colors/ ~/.dotfiles/
+VALUE="60" #brightness value to compare to
+scrot $IMAGE
+COLOR=`convert $IMAGE -colorspace hsb -resize 1x1 txt:- | sed -E '/.*$/ {
+                             N
+                             s/.*\n.*([0-9]{1,2}[^\.])\.[0-9]+%\)$/\1/
+                             }'`;
+# pixelate: -scale 10% -scale 1000%
+if [ "$COLOR" -gt "$VALUE" ]; then #white background image and black text
+	convert $IMAGE -scale 10% -scale 1000% $IMAGE
+	[[ -f $1 ]] && convert $IMAGE $1 -gravity center -composite -matte $IMAGE
+	composite -gravity center $SCRIPTPATH/lock.png $IMAGE $IMAGE
+    PARAM='--textcolor=00000000 --insidecolor=0000001c --ringcolor=0000003e --linecolor=00000000 --keyhlcolor=ffffff80 --ringvercolor=ffffff00 --insidevercolor=ffffff1c --ringwrongcolor=ffffff55 --insidewrongcolor=ffffff1c'
+else #black
+	convert $IMAGE -scale 10% -scale 1000% $IMAGE
+	[[ -f $1 ]] && convert $IMAGE $1 -gravity center -composite -matte $IMAGE
+	composite -gravity center $SCRIPTPATH/lock.png $IMAGE $IMAGE
+	PARAM='--textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c'
+fi
 
-# Fonts
-cp -f ~/.local/share/fonts/customfontastic.ttf ~/.dotfiles/.local/share/fonts/
+# try to use a forked version of i3lock with prepared parameters
+i3lock $PARAM -i $IMAGE > /dev/null 2>&1
 
-# Compton
-cp -f ~/.config/compton.conf ~/.dotfiles/.config/
+if [ $? -ne 0 ]; then
+    # We have failed, lets get back to stock one
+    i3lock -i $IMAGE
+fi
 
-# Bspwm
-cp -f ~/.config/bspwm/bspwmrc ~/.dotfiles/.config/bspwm/bspwmrc
-cp -f ~/.config/sxhkd/sxhkdrc ~/.dotfiles/.config/sxhkd/sxhkdrc
-
-# Theme Gtk & Qt
-cp -f ~/.config/Trolltech.conf ~/.dotfiles/.config/Trolltech.conf
-cp -f ~/.config/gtk-3.0/settings.ini ~/.dotfiles/.config/gtk-3.0/settings.ini
-cp -f ~/.gtkrc-2.0 ~/.dotfiles/.gtkrc-2.0
-
-# Sublime text 3
-cp -f ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings ~/.dotfiles/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
-
-# Brackets
-cp -f ~/.config/Brackets/brackets.json ~/.dotfiles/.config/Brackets/brackets.json
-
-# Xfce4-terminal
-cp -f ~/.config/xfce4/terminal/terminalrc ~/.dotfiles/.config/xfce4/terminal/terminalrc
-
-# Hexchat colors (base16)
-cp -f ~/.config/hexchat/colors.conf ~/.dotfiles/.config/hexchat/colors.conf
-
-# LemonBar
-cp -Rf ~/.bar/ ~/.dotfiles/
-
-# Bin various
-cp -f ~/bin/setwp ~/.dotfiles/bin/setwp
-cp -f ~/bin/pac-man ~/.dotfiles/bin/pac-man
-cp -f ~/bin/invaders ~/.dotfiles/bin/invaders
-cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
-cp -f ~/bin/pushdot ~/.dotfiles/bin/lock
-cp -f ~/bin/pushdot ~/.dotfiles/bin/lock.png
-
-# Wallpaper
-cp -f ~/.wallpaper ~/.dotfiles/.wallpaper
-
-# Oblogout
-cp -f /etc/oblogout.conf ~/.dotfiles/etc/oblogout.conf
-cp -Rf ~/.themes/Oblogout/ ~/.dotfiles/.themes/
+rm $IMAGE

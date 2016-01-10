@@ -65,8 +65,8 @@ cp -f ~/bin/setwp ~/.dotfiles/bin/setwp
 cp -f ~/bin/pac-man ~/.dotfiles/bin/pac-man
 cp -f ~/bin/invaders ~/.dotfiles/bin/invaders
 cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
-cp -f ~/bin/pushdot ~/.dotfiles/bin/lock
-cp -f ~/bin/pushdot ~/.dotfiles/bin/lock.png
+cp -f ~/bin/lock ~/.dotfiles/bin/lock
+cp -f ~/bin/lock.png ~/.dotfiles/bin/lock.png
 
 # Wallpaper
 cp -f ~/.wallpaper ~/.dotfiles/.wallpaper
