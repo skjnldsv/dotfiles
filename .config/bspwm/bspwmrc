@@ -16,15 +16,16 @@ bspc rule -a chromium desktop=^1
 #bspc rule -a xfce4-terminal desktop=^4
 #bspc rule -a thunar desktop=^5
 #bspc rule -a subl3 desktop=^3
-bspc rule -a vlc desktop=^2
-bspc rule -a brackets desktop=^3
-bspc rule -a messengerfordesktop desktop=^6
-bspc rule -a hexchat desktop=^6
-bspc rule -a ristretto state=floating
-bspc rule -a file-roller state=floating
-bspc rule -a keepassx state=floating
-bspc rule -a oblogout state=fullscreen
-bspc rule -a owncloud floating=off desktop=^7
+bspc rule -a Vlc desktop=^2
+bspc rule -a Brackets desktop=^3
+bspc rule -a Messengerfordesktop desktop=^6
+bspc rule -a Hexchat desktop=^6
+bspc rule -a Ristretto state=floating
+bspc rule -a File-roller state=floating
+bspc rule -a Keepassx state=floating
+bspc rule -a Oblogout state=fullcreen
+bspc rule -a Owncloud floating=off desktop=^7
+bspc rule -a crx_fpniocchabmgenibceglhnfeimmdhdfm desktop=^2
 
 # Compositor vsync and tear-free
 #/usr/bin/compton --backend glx --paint-on-overlay --vsync opengl-swc &
