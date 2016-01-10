@@ -40,7 +40,7 @@ echo P$ICON_POWER > $PANEL_FIFO &
 
 ########################
 # REBOOT
-echo R$ICON_REBOOT > $PANEL_FIFO &
+#echo R$ICON_REBOOT > $PANEL_FIFO &
 
 ########################
 # CLOCK
@@ -153,6 +153,6 @@ while true;
 
 done > $PANEL_FIFO &
 
-cat "$PANEL_FIFO" | panel_bar | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -f "$ICON_FONT1" -f "$ICON_FONT2" -f "$ICON_FONT_MENU" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -u 2 -o -1 -a 20 | zsh 
+panel_bar < "$PANEL_FIFO" | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -f "$ICON_FONT1" -f "$ICON_FONT2" -f "$ICON_FONT_MENU" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -u 2 -o -1 -a 20 | zsh &
 
 wait

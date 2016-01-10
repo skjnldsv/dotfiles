@@ -1,5 +1,5 @@
 #! /bin/sh
-# Custom keys
+# wm independent hotkeys
 XF86AudioRaiseVolume
 	pulseaudio-ctl up
 XF86AudioLowerVolume
@@ -17,78 +17,106 @@ XF86AudioNext
 XF86AudioPrev
 	mpc prev
 Print
-	xfce4-screenshooter -r -s /home/admin/Images/
+
+# terminal emulator
+super + Return
+	xfce4-terminal
+
+# program launcher
+super + space
+    dmenu_run -l 0 -x 0 -y 40 -w 1920 -h 22 -fn "Droid Sans-10" -o 0.66 -nb "#181818" -nf "#d8d8d8" -sb "#585858" -sf "#7cafc2" -p ">" -q -i -class "dmenu"
+
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
 
 #
 # bspwm hotkeys
 #
 
+# quit bspwm normally
 super + alt + Escape
 	bspc quit && pkill panel
 
-super + w
-	bspc window -c
+#
+# state/flags
+#
 
-super + t
-	bspc desktop -l next
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-super + b
-	bspc desktop -B
+# set the node flags
+super + ctrl + {x,y,z}
+	bspc node -g {locked,sticky,private}
 
-super + {s,f}
-	bspc window -t {floating,fullscreen}
+#
+# focus/swap
+#
 
-super + {grave,Tab}
-	bspc {window,desktop} -f last
-
-super + apostrophe
-	bspc window -s last
-
-# to delete
-super + {o,i}
-	bspc control --record-history off; \
-	bspc window {older,newer} -f; \
-	bspc control --record-history on
-
-# to delete
-super + y
-	bspc window -w last.manual
-
-super + m
-	bspc window -s biggest
-
+# focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
-	bspc window -{f,s} {left,down,up,right}
+	bspc node -{f,s} {west,south,north,east}
 
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous node
 super + {_,shift + }c
-	bspc window -f {next,prev}
+	bspc node -f {next,prev}
 
-super + {comma,period}
-	bspc desktop -C {backward,forward}
-
-super + bracket{left,right}
-	bspc desktop -f {prev,next}
-
+# focus the next/previous desktop
 super + {Left,Right}
 	bspc desktop -f {prev,next}
 
-super + ctrl + {h,j,k,l}
-	bspc window -p {left,down,up,right}
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
 
-super + ctrl + {_,shift + }space
-	bspc {window -p cancel,desktop -c}
-
-super + alt + {h,j,k,l}
-	bspc window -e {left -10,down +10,up -10,right +10}
-
-super + alt + shift + {h,j,k,l}
-	bspc window -e {right -10,up +10,down -10,left +10}
-
-super + ctrl + {1-9}
-	bspc window -r 0.{1-9}
-
+# focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# resize tiled/floating
+#
+
+# expand the tiled space in the given direction
+super + alt + {h,j,k,l}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+# contract the tiled space in the given direction
+super + alt + shift + {h,j,k,l}
+	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+# move a floating window
+super + {Left,Right}
+
+#
+# pointer focus/move/resize
+#
 
 ~button1
 	bspc pointer -g focus
@@ -105,19 +133,8 @@ super + !button{1-3}
 super + @button{1-3}
 	bspc pointer -u
 
+#
+# Gap
+#
 alt + {minus,equal}
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
-
-#
-# wm independent hotkeys
-#
-
-super + Return
-	xfce4-terminal
-
-super + space
-    dmenu_run -l 0 -x 0 -y 42 -w 1920 -h 28 -fn "Droid Sans-10" -nb "#181818" -nf "#d8d8d8" -sb "#585858" -sf "#7cafc2" -p ">" -q -i -class "dmenu"
-
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd

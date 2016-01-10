@@ -97,7 +97,7 @@ while read -r line ; do
 
 		P*)
 			# power
-			power="%{A3:halt:}$PADDING${line#?}$PADDING%{A}"
+			power="%{A3:oblogout:}$PADDING${line#?}$PADDING%{A}"
 			;;
 
 		R*)

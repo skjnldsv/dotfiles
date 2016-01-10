@@ -7,6 +7,10 @@ BASE16_SHELL="$HOME/.colors/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 ########################
+# Theme
+ZSH_THEME="custom"
+
+########################
 # Completion
 autoload -U compinit && compinit
 
@@ -34,3 +38,8 @@ fi
 # Alias
 alias ls++='ls++ --potsf'
 alias ls='ls++ --potsf'
+
+########################
+# Fix empty lines history
+sed '/^$/d' ~/.zsh_history > ~/.zsh_history.clean
+mv -f ~/.zsh_history.clean ~/.zsh_history

@@ -13,7 +13,7 @@ mkdir -p ~/.dotfiles/.config/hexchat/
 mkdir -p ~/.dotfiles/.config/Brackets/
 mkdir -p ~/.dotfiles/.local/share/fonts/
 mkdir -p ~/.dotfiles/.colors/
-
+mkdir -p ~/.dotfiles/etc/
 
 # ZSH
 cp -f ~/.zshrc ~/.dotfiles/
@@ -66,4 +66,7 @@ cp -f ~/bin/invaders ~/.dotfiles/bin/invaders
 cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
 
 # Wallpaper
-cp ~/.wallpaper ~/.dotfiles
+cp ~/.wallpaper ~/.dotfiles/.wallpaper
+
+# Oblogout
+cp /etc/oblogout.conf ~/.dotfiles/etc/oblogout.conf
