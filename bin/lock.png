@@ -67,7 +67,6 @@ cp -f ~/bin/invaders ~/.dotfiles/bin/invaders
 cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
 cp -f ~/bin/pushdot ~/.dotfiles/bin/lock
 cp -f ~/bin/pushdot ~/.dotfiles/bin/lock.png
-cp -f ~/bin/pushdot ~/.dotfiles/bin/lockdark.png
 
 # Wallpaper
 cp -f ~/.wallpaper ~/.dotfiles/.wallpaper
