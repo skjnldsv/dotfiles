@@ -1,10 +1,12 @@
 # Skjnldsv's dotfiles
 ------------------------
-![screenshot](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot1.png)
+![screenshot1](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot1.png)
 ![screenshot2](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot2.png)
 ![screenshot3](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot3.png)
+![screenshot4](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot4.png)
 Lockscreen
 ![screenvid](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenvid.gif)
+
 ------------------------
 ##Requirements:
 - bspwm
@@ -14,6 +16,8 @@ Lockscreen
 - conky
 - trayer
 - feh
+- i3lock
+- oblogout
 
 **I'm starting my own programs on boot in the bspwm config file. Obviously you're not forced to use them. Remember to disable the unused lines!**
 
@@ -25,12 +29,14 @@ Lockscreen
 - clipit
 - veracrypt
 - keepassx
+- redshift
 
 ##Features:
 - Click to switch desktop
 - Scroll to switch desktop
 - Scroll to volume up/down
-- Right click on power/reboot to halt/reboot
+- Click to lock
+- Reboot/shutdown/logout menu
 - Click on the ip to random switch openvpn ***(script made by me, not public for security reasons)***
 
 ##Themes:
