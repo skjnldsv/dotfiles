@@ -3,6 +3,8 @@
 ![screenshot](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot1.png)
 ![screenshot2](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot2.png)
 ![screenshot3](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot3.png)
+Lockscreen
+![screenvid](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenvid.gif)
 ------------------------
 ##Requirements:
 - bspwm
