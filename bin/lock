@@ -20,15 +20,12 @@ esac
 
 VALUE="60" #brightness value to compare to
 scrot $IMAGE
-COLOR=`convert $IMAGE -colorspace hsb -resize 1x1 txt:- | sed -E '/.*$/ {
-                             N
-                             s/.*\n.*([0-9]{1,2}[^\.])\.[0-9]+%\)$/\1/
-                             }'`;
-# pixelate: -scale 10% -scale 1000%
+COLOR=`convert $IMAGE -colorspace hsb -resize 1x1 txt:- | egrep -o '[0-9]{2}.{0,8}%)' | egrep -ow '[0-9]{2}'`;
+
 if [ "$COLOR" -gt "$VALUE" ]; then #white background image and black text
 	convert $IMAGE -scale 10% -scale 1000% $IMAGE
 	[[ -f $1 ]] && convert $IMAGE $1 -gravity center -composite -matte $IMAGE
-	composite -gravity center $SCRIPTPATH/lock.png $IMAGE $IMAGE
+	composite -gravity center $SCRIPTPATH/lockblack.png $IMAGE $IMAGE
     PARAM='--textcolor=00000000 --insidecolor=0000001c --ringcolor=0000003e --linecolor=00000000 --keyhlcolor=ffffff80 --ringvercolor=ffffff00 --insidevercolor=ffffff1c --ringwrongcolor=ffffff55 --insidewrongcolor=ffffff1c'
 else #black
 	convert $IMAGE -scale 10% -scale 1000% $IMAGE
