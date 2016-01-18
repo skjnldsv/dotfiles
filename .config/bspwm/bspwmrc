@@ -23,7 +23,7 @@ bspc rule -a Hexchat desktop=^6
 bspc rule -a Ristretto state=floating
 bspc rule -a File-roller state=floating
 bspc rule -a Keepassx state=floating
-bspc rule -a Oblogout state=fullcreen
+bspc rule -a Oblogout state=fullscreen
 bspc rule -a Owncloud floating=off desktop=^7
 bspc rule -a crx_fpniocchabmgenibceglhnfeimmdhdfm desktop=^2
 
