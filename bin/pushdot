@@ -67,9 +67,13 @@ cp -f ~/bin/invaders ~/.dotfiles/bin/invaders
 cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
 cp -f ~/bin/lock ~/.dotfiles/bin/lock
 cp -f ~/bin/lock.png ~/.dotfiles/bin/lock.png
+cp -f ~/bin/lockblack.png ~/.dotfiles/bin/lockblack.png
 
 # Wallpaper
 cp -f ~/.wallpaper ~/.dotfiles/.wallpaper
+
+# Xinitrc
+cp -f ~/.xinitrc ~/.dotfiles/.xinitrc
 
 # Oblogout
 cp -f /etc/oblogout.conf ~/.dotfiles/etc/oblogout.conf

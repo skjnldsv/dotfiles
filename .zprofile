@@ -6,5 +6,9 @@
 export PATH="$HOME/bin:$HOME/.bar:$PATH"
 
 ########################
+# Import path to systemd
+systemctl --user import-environment PATH
+
+########################
 # Automatically start X server on tty1
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

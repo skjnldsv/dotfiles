@@ -27,28 +27,5 @@ bspc rule -a Oblogout state=fullcreen
 bspc rule -a Owncloud floating=off desktop=^7
 bspc rule -a crx_fpniocchabmgenibceglhnfeimmdhdfm desktop=^2
 
-# Compositor vsync and tear-free
-#/usr/bin/compton --backend glx --paint-on-overlay --vsync opengl-swc &
-/usr/bin/compton --config .config/compton.conf -b &
-# Wallpaper
-/usr/bin/feh --bg-scale ~/.wallpaper &
 # Lemonbar
 /home/admin/.bar/panel &
-# Redshift
-/usr/bin/redshift-gtk &
-# Chromium
-/usr/bin/chromium &
-# Clipboard manager
-/usr/bin/clipit &
-# Rtorrent
-/home/admin/bin/startrtorrentinscreen  &
-# Veracrypt
-/usr/bin/veracrypt --background-task &
-# Owncloud client
-/usr/bin/owncloud &
-# KeepassX
-/usr/bin/keepassx -min -lock &
-# Num Lock ON
-/usr/bin/numlockx &
-# SysTray
-/usr/bin/trayer --widthtype request --align right --edge top --height 20 --distance 42 --transparent true --alpha 255 --padding 0 &

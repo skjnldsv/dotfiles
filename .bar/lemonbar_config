@@ -93,6 +93,7 @@ ICON_VOLLOW="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_VOLMED="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_VOLMAX="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_PAC="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_MAIL="%{F$COLOR_ICONS_FG}%{F-}"
 
 ########################
 # Set an item as "urgent" (aka red, underlined and flashy)
