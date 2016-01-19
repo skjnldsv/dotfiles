@@ -16,7 +16,7 @@ Lockscreen
 - conky
 - trayer
 - feh
-- ([i3lock-color][i3lock-color]) ([aur][aur-i3lock])
+- [i3lock-color][i3lock-color]) ([aur][aur-i3lock]
 - oblogout
 - xautolock
 - notify-send
@@ -27,11 +27,11 @@ Lockscreen
 - Brackets
 - Sublime text 3 (+[base16 theme][base16-subl])
 - xfce4-terminal (+[base16 theme][base16-term])
-- ([messengerfordesktop][messengerfordesktop])
+- [messengerfordesktop][messengerfordesktop]
 - clipit
 - veracrypt
 - keepassx
-- ([redshift][redshift])
+- [redshift][redshift]
 
 ##Features:
 - Click to switch desktop
