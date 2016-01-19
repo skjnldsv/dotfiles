@@ -16,8 +16,10 @@ Lockscreen
 - conky
 - trayer
 - feh
-- i3lock
+- ([i3lock-color][i3lock-color]) ([aur][aur-i3lock])
 - oblogout
+- xautolock
+- notify-send
 
 **I'm starting my own programs on boot in the bspwm config file. Obviously you're not forced to use them. Remember to disable the unused lines!**
 
@@ -25,11 +27,11 @@ Lockscreen
 - Brackets
 - Sublime text 3 (+[base16 theme][base16-subl])
 - xfce4-terminal (+[base16 theme][base16-term])
-- messengerfordesktop
+- ([messengerfordesktop][messengerfordesktop])
 - clipit
 - veracrypt
 - keepassx
-- redshift
+- ([redshift][redshift])
 
 ##Features:
 - Click to switch desktop
@@ -37,6 +39,7 @@ Lockscreen
 - Scroll to volume up/down
 - Click to lock
 - Reboot/shutdown/logout menu
+- Click to open gmail
 - Click on the ip to random switch openvpn ***(script made by me, not public for security reasons)***
 
 ##Themes:
@@ -48,3 +51,7 @@ Lockscreen
 [base16-subl]: https://github.com/chriskempson/base16-textmate
 [base16-term]: https://github.com/chriskempson/base16-xfce4-terminal
 [base16]: https://github.com/chriskempson/base16
+[messengerfordesktop]: https://github.com/Aluxian/Facebook-Messenger-Desktop
+[redshift]: http://jonls.dk/redshift/
+[i3lock-color]: https://github.com/eBrnd/i3lock-color
+[aur-i3lock]: https://aur.archlinux.org/packages/i3lock-color-git/

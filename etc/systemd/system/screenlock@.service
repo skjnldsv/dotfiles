@@ -5,7 +5,7 @@ After=graphical.target
 [Service]
 User=%i
 Environment=DISPLAY=:0.0
-ExecStart=/usr/bin/xautolock -time 5 -locker /home/admin/bin/lock -detectsleep -notify 10 -notifier "notify-send -t 10000 -u low 'LOCKING screen in 30 seconds'"
+ExecStart=/usr/bin/xautolock -time 5 -locker /home/%i/bin/lock -detectsleep -notify 10 -notifier "notify-send -t 10000 -u low 'LOCKING screen in 30 seconds'"
 Restart=always
 RestartSec=5
 

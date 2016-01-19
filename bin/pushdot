@@ -73,6 +73,7 @@ cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
 cp -f ~/bin/lock ~/.dotfiles/bin/lock
 cp -f ~/bin/lock.png ~/.dotfiles/bin/lock.png
 cp -f ~/bin/lockblack.png ~/.dotfiles/bin/lockblack.png
+cp -f ~/bin/openmail ~/.dotfiles/bin/openmail
 
 # Wallpaper
 cp -f ~/.wallpaper ~/.dotfiles/.wallpaper
