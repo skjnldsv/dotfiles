@@ -15,6 +15,7 @@ mkdir -p ~/.dotfiles/.local/share/fonts/
 mkdir -p ~/.dotfiles/.colors/
 mkdir -p ~/.dotfiles/.themes/Oblogout/
 mkdir -p ~/.dotfiles/etc/
+mkdir -p ~/.dotfiles/etc/systemd/system/
 
 # ZSH
 cp -f ~/.zshrc ~/.dotfiles/
@@ -32,6 +33,7 @@ cp -Rf ~/.colors/ ~/.dotfiles/
 
 # Fonts
 cp -f ~/.local/share/fonts/customfontastic.ttf ~/.dotfiles/.local/share/fonts/
+cp -f ~/.local/share/fonts/customfontastic.svg ~/.dotfiles/.local/share/fonts/
 
 # Compton
 cp -f ~/.config/compton.conf ~/.dotfiles/.config/
@@ -59,6 +61,9 @@ cp -f ~/.config/hexchat/colors.conf ~/.dotfiles/.config/hexchat/colors.conf
 
 # LemonBar
 cp -Rf ~/.bar/ ~/.dotfiles/
+## Obfuscate sensible data
+sed -r "s#'''[a-z]{9,20}@gmail\.com'''#'''xxxxxxxxxxx@gmail.com'''#g" -i ~/.dotfiles/.bar/panel
+sed -r "s#'''[a-z]{9,20}'''#'''xxxxxxxxxxx*password*xxxxxxxxxxx'''#g" -i ~/.dotfiles/.bar/panel
 
 # Bin various
 cp -f ~/bin/setwp ~/.dotfiles/bin/setwp
@@ -78,3 +83,6 @@ cp -f ~/.xinitrc ~/.dotfiles/.xinitrc
 # Oblogout
 cp -f /etc/oblogout.conf ~/.dotfiles/etc/oblogout.conf
 cp -Rf ~/.themes/Oblogout/ ~/.dotfiles/.themes/
+
+# Xautolock
+cp -f /etc/systemd/system/screenlock@.service ~/.dotfiles/etc/systemd/system/screenlock@.service

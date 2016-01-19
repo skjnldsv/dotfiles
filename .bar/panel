@@ -106,7 +106,7 @@ conky -c $(dirname $0)/lemonbar_conky > "$PANEL_FIFO" &
 # Mail
 while true;
 	do
-		mailcount=$(curl -s -u '''xxxxxxxxxxxx@gmail.com''':'''xxxxxxxxxxxxxxxxxxxxx''' https://mail.google.com/mail/feed/atom | egrep -o '<fullcount>([0-9]{1,3})<\/fullcount>' | egrep -ow '[0-9]{1,3}')
+		mailcount=$(curl -s -u '''xxxxxxxxxxx@gmail.com''':'''xxxxxxxxxxx*password*xxxxxxxxxxx''' https://mail.google.com/mail/feed/atom | egrep -o '<fullcount>([0-9]{1,3})<\/fullcount>' | egrep -ow '[0-9]{1,3}')
 		if [ $mailcount -ne 0 ];
 		then
 			echo "M $mailcount"

@@ -66,4 +66,3 @@ exec /usr/bin/trayer --widthtype request --align right --edge top --height 20 --
 # Bspwm & keyboard shortcuts
 exec sxhkd &
 exec bspwm
-
