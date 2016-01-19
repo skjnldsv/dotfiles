@@ -16,7 +16,7 @@ Lockscreen
 - conky
 - trayer
 - feh
-- [i3lock-color][i3lock-color]) ([aur][aur-i3lock]
+- [i3lock-color][i3lock-color] ([aur][aur-i3lock])
 - oblogout
 - xautolock
 - notify-send
