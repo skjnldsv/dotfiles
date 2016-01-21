@@ -20,6 +20,7 @@ Lockscreen
 - oblogout
 - xautolock
 - notify-send
+- jq ([github][jq])
 
 **I'm starting my own programs on boot in the bspwm config file. Obviously you're not forced to use them. Remember to disable the unused lines!**
 
@@ -55,3 +56,4 @@ Lockscreen
 [redshift]: http://jonls.dk/redshift/
 [i3lock-color]: https://github.com/eBrnd/i3lock-color
 [aur-i3lock]: https://aur.archlinux.org/packages/i3lock-color-git/
+[jq]: https://stedolan.github.io/jq/
