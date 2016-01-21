@@ -35,6 +35,11 @@ while read -r line ; do
 			systemp="$PADDING$ICON_TEMP${line#?}$PADDING"
 			;;
 
+		F*)
+			# forecast
+			forecast="$PADDING${line#?}$PADDING"
+			;;
+
 		U*)
 			# updates
 			updates="%{A:xfce4-terminal --command='yaourt -Suua' --drop-down &:}$PADDING$ICON_PAC${line#?}$PADDING%{A}"
@@ -154,5 +159,5 @@ while read -r line ; do
 			;;
 	esac
 	#printf "%s\n" "%{T4}%{l}${wm_infos}%{T-}${title}%{c}${netusage}%{r}${playing}${hdd}${cpu}${systemp}${ram}${ip}${volume}${clock}${power}${reboot}"
-	printf "%s\n" "%{T4}%{l}%{A4:bspc desktop -f next:}%{A5:bspc desktop -f prev:}${wm_infos}%{A}%{A}%{T-}${title}%{c}${netusage}%{r}${mail}${hdd}${cpu}${systemp}${ram}${updates}${ip}${volume}${clock}${lock}${power}"
+	printf "%s\n" "%{T4}%{l}%{A4:bspc desktop -f next:}%{A5:bspc desktop -f prev:}${wm_infos}%{A}%{A}%{T-}${title}%{c}${netusage}%{r}${forecast}${mail}${hdd}${cpu}${systemp}${ram}${updates}${ip}${volume}${clock}${lock}${power}"
 done

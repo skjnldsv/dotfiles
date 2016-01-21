@@ -131,6 +131,24 @@ while true;
 done > $PANEL_FIFO &
 
 ########################
+# FORECAST
+while true;
+	do
+		update_count=$(yaourt -Quua | wc -l)
+		# Remove ?si for Fahrenheit units
+		forecast=$(curl -s https://api.forecast.io/forecast/$FORECAST_API/$FORECAST_LOC?si)
+
+		temp=$(echo $forecast | jq -r ".currently.apparentTemperature")
+		now=$(echo $forecast | jq -r ".currently.icon")
+		next=$(echo $forecast | jq -r ".daily.icon")
+		now=$(weathericon $now)
+		next=$(weathericon $next)
+		
+		echo "F $temp$ICON_CEL $now $ICON_NEXT $next"
+	sleep 300
+done > $PANEL_FIFO &
+
+########################
 # CPU Temp
 while true;
 	do
@@ -167,6 +185,6 @@ while true;
 
 done > $PANEL_FIFO &
 
-panel_bar < "$PANEL_FIFO" | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -f "$ICON_FONT1" -f "$ICON_FONT2" -f "$ICON_FONT_MENU" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -u 2 -o -1 -a 20 | zsh &
+panel_bar < "$PANEL_FIFO" | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -f "$ICON_FORECAST" -f "$ICON_FONT1" -f "$ICON_FONT2" -f "$ICON_FONT_MENU" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" -u 2 -a 20 | zsh &
 
 wait

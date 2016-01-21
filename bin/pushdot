@@ -34,6 +34,8 @@ cp -Rf ~/.colors/ ~/.dotfiles/
 # Fonts
 cp -f ~/.local/share/fonts/customfontastic.ttf ~/.dotfiles/.local/share/fonts/
 cp -f ~/.local/share/fonts/customfontastic.svg ~/.dotfiles/.local/share/fonts/
+cp -f ~/.local/share/fonts/meteofontastic.ttf ~/.dotfiles/.local/share/fonts/
+cp -f ~/.local/share/fonts/meteofontastic.svg ~/.dotfiles/.local/share/fonts/
 
 # Compton
 cp -f ~/.config/compton.conf ~/.dotfiles/.config/
@@ -64,6 +66,8 @@ cp -Rf ~/.bar/ ~/.dotfiles/
 ## Obfuscate sensible data
 sed -r "s#'''[a-z]{9,20}@gmail\.com'''#'''xxxxxxxxxxx@gmail.com'''#g" -i ~/.dotfiles/.bar/panel
 sed -r "s#'''[a-z]{9,20}'''#'''xxxxxxxxxxx*password*xxxxxxxxxxx'''#g" -i ~/.dotfiles/.bar/panel
+sed -r 's#FORECAST_API="[a-z0-9]{32}"#FORECAST_API="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"#g' -i ~/.dotfiles/.bar/lemonbar_config
+sed -r 's#FORECAST_LOC="-?[0-9]{1,2}\.[0-9]{6},-?[0-9]{1,2}\.[0-9]{6}"#FORECAST_LOC="-90.0000,0.0000"#g' -i ~/.dotfiles/.bar/lemonbar_config
 
 # Bin various
 cp -f ~/bin/setwp ~/.dotfiles/bin/setwp

@@ -8,7 +8,13 @@ PANEL_HEIGHT=42
 PANEL_FONT_FAMILY="Droid Sans:size=9"
 ICON_FONT1="FontAwesome:size=11"
 ICON_FONT2="customfontastic:size=11"
+ICON_FORECAST="meteofontastic:size=13"
 ICON_FONT_MENU="FontAwesome:size=13"
+
+# A forecast.io api key (free)
+FORECAST_API="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# Coordinates like "-90.0000,0.0000"
+FORECAST_LOC="-90.0000,0.0000"
 
 DISK_SPACE_WARN_LEVEL=95
 CPU_WARN_LEVEL=80
@@ -94,6 +100,9 @@ ICON_VOLMED="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_VOLMAX="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_PAC="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_MAIL="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_NEXT="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_FAR=""
+ICON_CEL=""
 
 ########################
 # Set an item as "urgent" (aka red, underlined and flashy)
@@ -104,4 +113,42 @@ function urgent {
 # Set an item as low (aka transparent)
 function low {
 	echo "%{F$COLOR_LOW_FG}$@%{F-}"
+}
+
+function weathericon {
+	case $1 in
+		"clear-day")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		"clear-night")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		"rain")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		"snow")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		"sleet")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		"wind")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		"fog")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		"cloudy")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		"partly-cloudy-day")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		"partly-cloudy-night")
+		    echo "%{F$COLOR_ICONS_FG}%{F-}"
+		;;
+		*)
+		    echo $1
+		;;
+	esac
 }

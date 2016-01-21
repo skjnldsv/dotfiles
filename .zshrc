@@ -38,8 +38,3 @@ fi
 # Alias
 alias ls++='ls++ --potsf'
 alias ls='ls++ --potsf'
-
-########################
-# Fix empty lines history
-sed '/^$/d' ~/.zsh_history > ~/.zsh_history.clean
-mv -f ~/.zsh_history.clean ~/.zsh_history
