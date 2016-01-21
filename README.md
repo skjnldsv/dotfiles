@@ -4,7 +4,7 @@
 ![screenshot2](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot2.png)
 ![screenshot3](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot3.png)
 ![screenshot4](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot4.png)
-Lockscreen
+Lockscreen gif
 ![screenvid](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenvid.gif)
 
 ------------------------
