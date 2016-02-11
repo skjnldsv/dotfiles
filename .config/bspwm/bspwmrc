@@ -21,6 +21,7 @@ bspc rule -a Brackets desktop=^3
 bspc rule -a Messengerfordesktop desktop=^6
 bspc rule -a Hexchat desktop=^6
 bspc rule -a Ristretto state=floating
+bspc rule -a Gthumb state=floating
 bspc rule -a File-roller state=floating
 bspc rule -a Keepassx state=floating
 bspc rule -a Oblogout state=fullscreen
