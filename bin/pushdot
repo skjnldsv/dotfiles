@@ -67,6 +67,7 @@ cp -Rf ~/.bar/ ~/.dotfiles/
 sed -r "s#'''[a-z]{9,20}@gmail\.com'''#'''xxxxxxxxxxx@gmail.com'''#g" -i ~/.dotfiles/.bar/panel
 sed -r "s#'''[a-z]{9,20}'''#'''xxxxxxxxxxx*password*xxxxxxxxxxx'''#g" -i ~/.dotfiles/.bar/panel
 sed -r 's#FORECAST_API="[a-z0-9]{32}"#FORECAST_API="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"#g' -i ~/.dotfiles/.bar/lemonbar_config
+sed -r 's#GITHUB_API="[a-z0-9]{40}"#GITHUB_API="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"#g' -i ~/.dotfiles/.bar/lemonbar_config
 sed -r 's#FORECAST_LOC="-?[0-9]{1,2}\.[0-9]{6},-?[0-9]{1,2}\.[0-9]{6}"#FORECAST_LOC="-90.0000,0.0000"#g' -i ~/.dotfiles/.bar/lemonbar_config
 
 # Bin various
@@ -78,6 +79,7 @@ cp -f ~/bin/lock ~/.dotfiles/bin/lock
 cp -f ~/bin/lock.png ~/.dotfiles/bin/lock.png
 cp -f ~/bin/lockblack.png ~/.dotfiles/bin/lockblack.png
 cp -f ~/bin/openmail ~/.dotfiles/bin/openmail
+cp -f ~/bin/opengithub ~/.dotfiles/bin/opengithub
 
 # Wallpaper
 cp -f ~/.wallpaper ~/.dotfiles/.wallpaper

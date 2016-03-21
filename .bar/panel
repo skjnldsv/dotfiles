@@ -123,9 +123,9 @@ while true;
 		update_count=$(yaourt -Quua | wc -l)
 		if [ $update_count -ne 0 ];
 		then
-			echo "U $update_count updates"
+			echo "U $update_count"
 		else
-			echo "U $(low $update_count updates)"
+			echo "U $(low $update_count)"
 		fi;
 	sleep 60
 done > $PANEL_FIFO &
@@ -134,7 +134,6 @@ done > $PANEL_FIFO &
 # FORECAST
 while true;
 	do
-		update_count=$(yaourt -Quua | wc -l)
 		# Remove ?si for Fahrenheit units
 		forecast=$(curl -s "https://api.forecast.io/forecast/$FORECAST_API/$FORECAST_LOC?units=si")
 
@@ -146,6 +145,22 @@ while true;
 
 		echo "F $temp$ICON_CEL $now $ICON_NEXT $next"
 	sleep 300
+done > $PANEL_FIFO &
+
+########################
+# GITHUB
+while true;
+	do
+		github=$(curl -s "https://api.github.com/notifications?access_token=$GITHUB_API")
+
+		github_count=$(echo $github | jq -r ". | length")
+		if [ $github_count -ne 0 ];
+		then
+			echo "G $github_count"
+		else
+			echo "G $(low $github_count)"
+		fi;
+	sleep 60
 done > $PANEL_FIFO &
 
 ########################

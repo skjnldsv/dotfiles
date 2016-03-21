@@ -13,6 +13,8 @@ ICON_FONT_MENU="FontAwesome:size=13"
 
 # A forecast.io api key (free)
 FORECAST_API="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# Github api key
+GITHUB_API="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 # Coordinates like "-90.0000,0.0000"
 FORECAST_LOC="-90.0000,0.0000"
 
@@ -100,6 +102,7 @@ ICON_VOLMED="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_VOLMAX="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_PAC="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_MAIL="%{F$COLOR_ICONS_FG}%{F-}"
+ICON_GITHUB="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_NEXT="%{F$COLOR_ICONS_FG}%{F-}"
 ICON_FAR=""
 ICON_CEL=""
