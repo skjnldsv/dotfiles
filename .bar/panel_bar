@@ -46,7 +46,7 @@ while read -r line ; do
 			;;
 
 		G*)
-			# mails
+			# github notifications
 			github="%{A:opengithub:}$PADDING$ICON_GITHUB${line#?}$PADDING%{A}"
 			;;
 
