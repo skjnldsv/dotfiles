@@ -41,6 +41,7 @@ Lockscreen gif
 - Click to lock
 - Reboot/shutdown/logout menu
 - Click to open gmail
+- Click to open github notifications
 - Click on the ip to random switch openvpn ***(script made by me, not public for security reasons)***
 
 ##Themes:
