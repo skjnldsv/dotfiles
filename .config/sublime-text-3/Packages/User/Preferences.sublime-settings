@@ -1,5 +1,6 @@
 {
 	"color_scheme": "Packages/Base16/base16-default.dark.tmTheme",
-	"font_size": 11,
-	"font_face": "SourceCodePro"
+	"font_face": "SourceCodePro",
+	"font_size": 12,
+	"update_check": false
 }

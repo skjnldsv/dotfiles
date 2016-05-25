@@ -7,5 +7,11 @@
     },
     "useTabChar": true,
     "linting.collapsed": true,
-    "wordWrap": true
+    "wordWrap": false,
+    "dimitrk.exclude-indexing-filetree.excludeList": [
+        ".git(?!ignore)",
+        "dist",
+        "bower_components",
+        "node_modules"
+    ]
 }
