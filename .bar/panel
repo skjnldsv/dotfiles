@@ -188,10 +188,12 @@ done > $PANEL_FIFO &
 # IP
 while true;
 	do
-		IP=$(wget -t 2 -T 2 checkip.dyndns.org -q -O - | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
+		IPINFO=$(curl -s -m 1 --connect-timeout 1 "ipinfo.io")
+		IP=$(echo $IPINFO | jq -r ".ip")
+		CO=$(echo $IPINFO | jq -r ".country")
 		if [ $IP ]
 		then
-			echo "I$IP"
+			echo "I$CO $IP"
 		else
 			IP2=$(wget -t 2 -T 2 duckduckgo.com/\?q\=whats+my+ip -q -O - | grep  -Eo '[[:digit:]]{1,3}(\.[[:digit:]]{1,3}){3}')
 			if [ $IP2 ]
@@ -201,7 +203,7 @@ while true;
 				echo I$(urgent DISCONNECTED)
 			fi;
 		fi;
-	sleep 5;
+	sleep 90;
 
 done > $PANEL_FIFO &
 

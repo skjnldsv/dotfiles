@@ -13,6 +13,7 @@ ZSH_THEME="custom"
 ########################
 # Completion
 autoload -U compinit && compinit
+setopt hist_ignore_space
 
 ########################
 # Colors

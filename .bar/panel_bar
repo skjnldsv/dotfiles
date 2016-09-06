@@ -17,7 +17,7 @@ while read -r line ; do
 
 		I*)
 			# IP output
-			ip="%{A:gksudo openvpnSwitch Sweden &:}$PADDING${line#?}$PADDING%{A}"
+			ip="%{A:gksudo openvpnSwitch Switzerland &:}$PADDING${line#?}$PADDING%{A}"
 			;;
 		T*)
 			# xtitle output

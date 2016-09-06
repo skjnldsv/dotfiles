@@ -18,7 +18,7 @@ bspc rule -a chromium desktop=^1
 #bspc rule -a thunar desktop=^5
 #bspc rule -a subl3 desktop=^3
 bspc rule -a Vlc desktop=^2
-bspc rule -a Brackets desktop=^3
+bspc rule -a Brackets desktop=^3 state=tiled
 bspc rule -a Messengerfordesktop desktop=^6
 bspc rule -a Hexchat desktop=^6
 bspc rule -a Ristretto state=floating
