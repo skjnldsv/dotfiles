@@ -26,4 +26,9 @@ WordChars=-A-Za-z0-9,./?%&#_=+@~
 CommandLoginShell=TRUE
 ScrollingOnOutput=FALSE
 DropdownAnimationTime=20
+MiscBellUrgent=FALSE
+MiscMouseWheelZoom=TRUE
+MiscMiddleClickOpensUri=FALSE
+MiscDefaultWorkingDir=
+MiscRewrapOnResize=TRUE
 

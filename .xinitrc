@@ -44,6 +44,10 @@ xsetroot -cursor_name left_ptr
 #Wallpaper
 /usr/bin/feh --bg-scale ~/.wallpaper
 
+#Android
+_JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_AWT_WM_NONREPARENTING
+
 # Compositor vsync and tear-free
 exec /usr/bin/compton --config .config/compton.conf -b &
 # Redshift
@@ -57,7 +61,7 @@ exec /home/admin/bin/startrtorrentinscreen  &
 # Veracrypt
 exec /usr/bin/veracrypt --background-task &
 # Owncloud client
-exec /usr/bin/owncloud &
+exec /usr/bin/nextcloud &
 # KeepassX
 exec /usr/bin/keepassx -min -lock &
 # SysTray

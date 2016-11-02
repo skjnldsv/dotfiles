@@ -5,7 +5,7 @@
 ########################
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=42
-PANEL_FONT_FAMILY="Droid Sans:size=9"
+PANEL_FONT_FAMILY="Droid Sans:size=8"
 ICON_FONT1="FontAwesome:size=11"
 ICON_FONT2="customfontastic:size=11"
 ICON_FORECAST="meteofontastic:size=13"
