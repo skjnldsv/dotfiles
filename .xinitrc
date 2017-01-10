@@ -58,12 +58,14 @@ exec /usr/bin/chromium &
 exec /usr/bin/clipit &
 # Rtorrent
 exec /home/admin/bin/startrtorrentinscreen  &
-# Veracrypt
-exec /usr/bin/veracrypt --background-task &
 # Owncloud client
 exec /usr/bin/nextcloud &
 # KeepassX
 exec /usr/bin/keepassx -min -lock &
+# Hexchat
+exec /usr/bin/hexchat &
+# Messenger
+exec /opt/messengerfordesktop/messengerfordesktop &
 # SysTray
 exec /usr/bin/trayer --widthtype request --align right --edge top --height 20 --distance 42 --transparent true --alpha 255 --padding 0 &
 

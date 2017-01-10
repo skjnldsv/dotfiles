@@ -3,7 +3,7 @@
 # User configuration
 ########################
 # Set ~/bin priority
-export PATH="$HOME/bin:$HOME/.bar:$PATH"
+export PATH="$HOME/bin:$HOME/.bar:/opt/messengerfordesktop:$PATH"
 
 ########################
 # Import path to systemd

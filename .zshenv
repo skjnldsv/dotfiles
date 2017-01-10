@@ -20,3 +20,5 @@ export PATH="$HOME/bin:$HOME/.bar:$PATH"
 # Default editor
 export VISUAL=vim
 export EDITOR=$VISUAL
+export SYSTEMD_EDITOR=$VISUAL
+

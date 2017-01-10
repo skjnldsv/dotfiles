@@ -42,7 +42,7 @@ while read -r line ; do
 
 		U*)
 			# updates
-			updates="%{A:xfce4-terminal --command='yaourt -Suua' --drop-down &:}$PADDING$ICON_PAC${line#?}$PADDING%{A}"
+			updates="%{A:xfce4-terminal --command='pacaur -Su' --drop-down &:}$PADDING$ICON_PAC${line#?}$PADDING%{A}"
 			;;
 
 		G*)
@@ -82,11 +82,11 @@ while read -r line ; do
 			else 
 				root=$root%
 			fi
-			win=${sys_arr[4]}
-			if [ $win -gt $DISK_SPACE_WARN_LEVEL ]; then
-				win=$(urgent $win%)
+			raid5=${sys_arr[4]}
+			if [ $raid5 -gt $DISK_SPACE_WARN_LEVEL ]; then
+				raid5=$(urgent $raid5%)
 			else 
-				win=$win%
+				raid5=$raid5%
 			fi
 			raid=${sys_arr[3]}
 			if [ $raid -gt $DISK_SPACE_WARN_LEVEL ]; then
@@ -94,7 +94,7 @@ while read -r line ; do
 			else 
 				raid=$raid%
 			fi
-			hdd="$PADDING$ICON_ROOT $root  $ICON_WIN $win  $ICON_RAID $raid$PADDING"
+			hdd="$PADDING$ICON_ROOT $root  $ICON_RAID $raid5  $ICON_RAID $raid$PADDING"
 
 			########
 			#NETWORK

@@ -120,7 +120,7 @@ done > $PANEL_FIFO &
 # UPDATES
 while true;
 	do
-		update_count=$(yaourt -Quua | wc -l)
+		update_count=$(pacaur -Quu | wc -l)
 		if [ $update_count -ne 0 ];
 		then
 			echo "U $update_count"
