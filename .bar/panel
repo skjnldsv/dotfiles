@@ -167,7 +167,7 @@ done > $PANEL_FIFO &
 # CPU Temp
 while true;
 	do
-		tempcpu=$(sensors | grep Physical | cut -c18-19)
+		tempcpu=$(sensors | grep 'Package id' | cut -c17-18)
 		tempgpu=$(nvidia-smi -q -d temperature | grep "Current Temp" | cut -c 39-40)
 		if [ $tempcpu -gt $CPU_TEMP_WARN_LEVEL ]
 		then

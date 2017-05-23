@@ -40,5 +40,6 @@ fi
 alias ls++='ls++ --potsf'
 alias ls='ls++ --potsf'
 
-export NVM_DIR="/home/admin/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="/home/admin/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
