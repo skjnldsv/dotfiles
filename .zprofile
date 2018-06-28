@@ -3,7 +3,7 @@
 # User configuration
 ########################
 # Set ~/bin priority
-export PATH="$HOME/bin:$HOME/.bar:/opt/messengerfordesktop:$PATH"
+export PATH="$HOME/bin:$HOME/.npm-packages/bin:$HOME/.gem/ruby/2.5.0/bin:$PATH"
 
 ########################
 # Import path to systemd

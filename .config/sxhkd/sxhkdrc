@@ -49,12 +49,13 @@ super + alt + Escape
 #
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,s,f}
+	bspc node -t {tiled,floating,fullscreen}
 
-# set the node flags
-super + ctrl + {x,y,z}
-	bspc node -g {locked,sticky,private}
+# set the window state to sticky and floating
+super + a
+	bspc node -t floating; \
+	bspc node -g sticky
 
 #
 # focus/swap
@@ -81,8 +82,8 @@ super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-9,0,minus,equal}
+	bspc {desktop -f,node -d} '^{1-9,10,11,12}'
 
 #
 # preselect
@@ -125,14 +126,15 @@ super + {Left,Right}
 
 # start move/resize
 super + button{1-3}
-	bspc pointer -g {move,resize_corner,resize_side}
-
-super + !button{1-3}
-	bspc pointer --track %i %i
+	bspc pointer -g {move,resize_side,resize_corner}
 
 # end move/resize
 super + @button{1-3}
 	bspc pointer -u
+
+# move a floating window
+super + alt + {Left,Down,Up,Right}
+	xdo move {-x -20,-y +20,-y -20,-x +20}
 
 #
 # Gap

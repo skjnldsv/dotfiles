@@ -52,9 +52,6 @@ cp -f ~/.gtkrc-2.0 ~/.dotfiles/.gtkrc-2.0
 # Sublime text 3
 cp -f ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings ~/.dotfiles/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 
-# Brackets
-cp -f ~/.config/Brackets/brackets.json ~/.dotfiles/.config/Brackets/brackets.json
-
 # Xfce4-terminal
 cp -f ~/.config/xfce4/terminal/terminalrc ~/.dotfiles/.config/xfce4/terminal/terminalrc
 
@@ -62,24 +59,26 @@ cp -f ~/.config/xfce4/terminal/terminalrc ~/.dotfiles/.config/xfce4/terminal/ter
 cp -f ~/.config/hexchat/colors.conf ~/.dotfiles/.config/hexchat/colors.conf
 
 # LemonBar
-cp -Rf ~/.bar/ ~/.dotfiles/
-## Obfuscate sensible data
-sed -r "s#'''[a-z]{9,20}@gmail\.com'''#'''xxxxxxxxxxx@gmail.com'''#g" -i ~/.dotfiles/.bar/panel
-sed -r "s#'''[a-z]{9,20}'''#'''xxxxxxxxxxx*password*xxxxxxxxxxx'''#g" -i ~/.dotfiles/.bar/panel
-sed -r 's#FORECAST_API="[a-z0-9]{32}"#FORECAST_API="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"#g' -i ~/.dotfiles/.bar/lemonbar_config
-sed -r 's#GITHUB_API="[a-z0-9]{40}"#GITHUB_API="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"#g' -i ~/.dotfiles/.bar/lemonbar_config
-sed -r 's#FORECAST_LOC="-?[0-9]{1,2}\.[0-9]{6},-?[0-9]{1,2}\.[0-9]{6}"#FORECAST_LOC="-90.0000,0.0000"#g' -i ~/.dotfiles/.bar/lemonbar_config
+cp -Rf ~/.config/polybar/ ~/.dotfiles/.config/
 
 # Bin various
 cp -f ~/bin/setwp ~/.dotfiles/bin/setwp
 cp -f ~/bin/pac-man ~/.dotfiles/bin/pac-man
 cp -f ~/bin/invaders ~/.dotfiles/bin/invaders
 cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
-cp -f ~/bin/lock ~/.dotfiles/bin/lock
 cp -f ~/bin/lock.png ~/.dotfiles/bin/lock.png
 cp -f ~/bin/lockblack.png ~/.dotfiles/bin/lockblack.png
 cp -f ~/bin/openmail ~/.dotfiles/bin/openmail
 cp -f ~/bin/opengithub ~/.dotfiles/bin/opengithub
+cp -f ~/bin/getWeather.sh ~/.dotfiles/bin/getWeather.sh
+cp -f ~/bin/getIp.sh ~/.dotfiles/bin/getIp.sh
+
+## Obfuscate sensible data
+sed -r "s#'''[a-z]{9,20}@gmail\.com'''#'''xxxxxxxxxxx@gmail.com'''#g" -i ~/.dotfiles/.config/polybar/config
+sed -r "s#'''[a-z]{9,20}'''#'''xxxxxxxxxxx*password*xxxxxxxxxxx'''#g" -i ~/.dotfiles/.config/polybar/config
+sed -r 's#token = [a-z0-9]{40}#token = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx#g' -i ~/.dotfiles/.config/polybar/config
+sed -r 's#FORECAST_API="[a-z0-9]{32}"#FORECAST_API="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"#g' -i ~/.dotfiles/bin/getWeather.sh
+sed -r 's#FORECAST_LOC="-?[0-9]{1,2}\.[0-9]{6},-?[0-9]{1,2}\.[0-9]{6}"#FORECAST_LOC="-90.0000,0.0000"#g' -i ~/.dotfiles/bin/getWeather.sh
 
 # Wallpaper
 cp -f ~/.wallpaper ~/.dotfiles/.wallpaper
@@ -90,6 +89,3 @@ cp -f ~/.xinitrc ~/.dotfiles/.xinitrc
 # Oblogout
 cp -f /etc/oblogout.conf ~/.dotfiles/etc/oblogout.conf
 cp -Rf ~/.themes/Oblogout/ ~/.dotfiles/.themes/
-
-# Xautolock
-cp -f /etc/systemd/system/screenlock@.service ~/.dotfiles/etc/systemd/system/screenlock@.service

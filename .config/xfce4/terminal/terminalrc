@@ -1,7 +1,7 @@
 [Configuration]
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
-MiscBordersDefault=FALSE
+MiscBordersDefault=TRUE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
@@ -15,20 +15,23 @@ MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
-ScrollingLines=15000
-ColorCursor=#d8d8d8
-ColorForeground=#d8d8d8
-ColorBackground=#2e7f31d13d70
-ColorPalette=#38383c3c4a4a;#abab46464242;#a1a1b5b56c6c;#f7f7caca8888;#7c7cafafc2c2;#baba8b8bafaf;#8686c1c1b9b9;#d8d8d8d8d8d8;#585858585858;#abab46464242;#a1a1b5b56c6c;#f7f7caca8888;#7c7cafafc2c2;#baba8b8bafaf;#8686c1c1b9b9;#f8f8f8f8f8f8
+ScrollingLines=999999
 BackgroundDarkness=1,000000
-FontName=Source Code Pro 11
-WordChars=-A-Za-z0-9,./?%&#_=+@~
-CommandLoginShell=TRUE
 ScrollingOnOutput=FALSE
-DropdownAnimationTime=20
 MiscBellUrgent=FALSE
 MiscMouseWheelZoom=TRUE
 MiscMiddleClickOpensUri=FALSE
-MiscDefaultWorkingDir=
+MiscCopyOnSelect=FALSE
+MiscShowRelaunchDialog=TRUE
 MiscRewrapOnResize=TRUE
+MiscUseShiftArrowsToScroll=FALSE
+MiscSlimTabs=FALSE
+MiscNewTabAdjacent=FALSE
+ScrollingUnlimited=TRUE
+ColorPalette=#181818;#ab4642;#a1b56c;#f7ca88;#7cafc2;#ba8baf;#86c1b9;#d8d8d8;#585858;#ab4642;#a1b56c;#f7ca88;#7cafc2;#ba8baf;#86c1b9;#f8f8f8
+ColorForeground=#d8d8d8
+ColorBackground=#181818
+ColorCursor=x
+FontName=SF Pro Display 10
+FontUseSystem=TRUE
 

@@ -110,7 +110,7 @@ set smartcase
 " Colors
 set t_Co=256
 let base16colorspace=256
-colorscheme base16-default
+colorscheme base16-default-dark
 set background=dark
 
 " Encoding

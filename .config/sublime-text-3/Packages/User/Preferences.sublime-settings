@@ -1,10 +1,10 @@
 {
-	"color_scheme": "Packages/Base16/base16-default.dark.tmTheme",
-	"font_face": "SourceCodePro",
-	"font_size": 11,
+	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-default-dark.tmTheme",
+	"enable_tab_scrolling": false,
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-	"update_check": false
+	"theme": "Default.sublime-theme"
 }

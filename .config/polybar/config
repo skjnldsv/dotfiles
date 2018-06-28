@@ -1,0 +1,268 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+background = #99181818
+background-alt = #99282828
+background-alt-2 = #99383838
+foreground = #c8c8c8
+foreground-alt = #d8d8d8
+foreground-icons = #aad8d8d8
+primary = #ffb52a
+secondary = #7cafc2
+alert = #ab4642
+
+[bar/admin]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 42
+;offset-x = 1%
+;offset-y = 1%
+;radius = 6.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+;line-color = #f00
+
+;border-size = 4
+;border-color = #00000000
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = SourceCodePro:pixelsize=8;2
+font-1 = forkawesome:style=Solid:pixelsize=10;3
+font-2 = customfontastic:pixelsize=10;4
+font-3 = meteofontastic:size=10;1
+
+modules-left = bspwm xwindow
+modules-center = network
+modules-right = filesystem-root filesystem-home filesystem-raid cpu temperature nvidia memory mail github update iplocation volume weather date powermenu
+
+;tray-position = right
+;tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:50:...%
+
+[module/filesystem-root]
+type = internal/fs
+interval = 5
+mount-0 = /
+label-mounted =  %percentage_used%%
+label-unmounted-foreground = ${colors.foreground}
+
+[module/filesystem-home]
+type = internal/fs
+interval = 5
+mount-0 = /home
+label-mounted =  %percentage_used%%
+label-unmounted-foreground = ${colors.foreground}
+
+[module/filesystem-raid]
+type = internal/fs
+interval = 5
+mount-0 = /mnt/2TB-Raid
+mount-1 = /mnt/3TB-Raid
+label-mounted =  %percentage_used%%
+label-unmounted-foreground = ${colors.foreground}
+
+[module/bspwm]
+type = internal/bspwm
+
+label = %icon%
+label-background = ${colors.foreground}
+label-foreground = ${colors.foreground-alt}
+label-padding = 1
+
+label-focused = %icon%
+label-focused-foreground = ${colors.foreground-alt}
+label-focused-background = ${colors.background-alt-2}
+label-focused-underline= ${colors.foreground-alt}
+label-focused-padding = 1
+
+label-occupied = %icon%
+label-occupied-background = ${colors.background-alt}
+label-occupied-foreground = ${colors.foreground}
+label-occupied-padding = 1
+
+label-urgent = %icon%
+label-urgent-underline= ${colors.alert}
+label-urgent-foreground = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 1
+
+ws-icon-0 = browser;
+ws-icon-1 = browser2;
+ws-icon-2 = games;
+ws-icon-3 = media;
+ws-icon-4 = design;
+ws-icon-5 = code;
+ws-icon-6 = github;
+ws-icon-7 = terminal;
+ws-icon-8 = folder;
+ws-icon-9 = messenger;
+ws-icon-10 = irc;
+ws-icon-11 = other;
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-icons}
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 0.5
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-icons}
+label = %gb_used%
+
+[module/date]
+type = internal/date
+interval = 1
+;date = %Y-%m-%d"
+time = %H:%M:%S
+;format-prefix = " "
+;format-prefix-foreground = ${colors.foreground-icons}
+label = %time%
+
+[module/volume]
+type = internal/volume
+;format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+format-prefix-foreground = ${colors.foreground-icons}
+format-muted = 
+format-muted-foreground = ${colors.foreground}
+label-muted = sound muted
+;ramp-volume-0 = 
+;ramp-volume-1 = 
+;ramp-volume-2 = 
+;ramp-volume-3 = 
+;ramp-volume-0-foreground = ${colors.foreground-icons}
+;ramp-volume-1-foreground = ${colors.foreground-icons}
+;ramp-volume-2-foreground = ${colors.foreground-icons}
+;ramp-volume-3-foreground = ${colors.foreground-icons}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 50
+label = %temperature%
+format = <label>
+format-prefix = "- "
+format-prefix-foreground = ${colors.foreground-icons}
+format-offset = -5
+format-warn = <label-warn>
+format-warn-prefix = "- "
+format-warn-prefix-foreground = ${colors.foreground-icons}
+format-warn-offset = -5
+label-warn = %temperature%
+label-warn-foreground = ${colors.alert}
+
+[module/nvidia]
+type = custom/script
+tail = true
+format = <label>°C
+format-prefix = "- "
+format-offset = -5
+exec-if = nvidia-smi
+exec = nvidia-smi --loop=1 --query-gpu=temperature.gpu --format=csv,noheader,nounits
+
+[module/powermenu]
+type = custom/script
+exec = echo 
+click-left = oblogout
+
+[module/lock]
+type = custom/script
+exec = echo 
+click-left = lock
+
+[module/github]
+type = internal/github
+token = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+empty-notifications = true
+interval = 60
+label = %notifications%%{A}
+format-prefix = "%{A:opengithub:} "
+format-prefix-foreground = ${colors.foreground-icons}
+
+[module/update]
+type = custom/script
+exec = trizen -Quu | wc -l
+interval = 10
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-icons}
+
+[module/iplocation]
+type = custom/script
+exec = getIp.sh
+interval = 90
+
+[module/weather]
+type = custom/script
+exec = getWeather.sh
+interval = 300
+
+[module/mail]
+type = custom/script
+exec = curl -s -u '''xxxxxxxxxxx@gmail.com''':'''xxxxxxxxxxx*password*xxxxxxxxxxx''' https://mail.google.com/mail/feed/atom | egrep -o '<fullcount>([0-9]{1,3})<\/fullcount>' | egrep -ow '[0-9]{1,3}'
+interval = 60
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-icons}
+click-left = openmail
+
+[module/network]
+type = internal/network
+interface = enp0s31f6
+label-connected = %downspeed%  %upspeed%
+label-disconnected = disconnected
+label-padding = 0
+format-connected-foreground = ${colors.foreground-icons}
+format-disconnected-foreground = ${colors.alert}
+interval = 0.5
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

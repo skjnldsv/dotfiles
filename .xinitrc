@@ -36,8 +36,8 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+# Gnome keyring
+
 numlockx
 xsetroot -cursor_name left_ptr
 
@@ -48,24 +48,27 @@ xsetroot -cursor_name left_ptr
 _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_AWT_WM_NONREPARENTING
 
+# Nvidia hack
+nvidia-settings -a GpuPowerMizerMode=1
+
 # Compositor vsync and tear-free
 exec /usr/bin/compton --config .config/compton.conf -b &
 # Redshift
 exec /usr/bin/redshift-gtk &
 # Chromium
-exec /usr/bin/chromium &
+exec /usr/bin/chromium --disk-cache-dir=/tmp/cache &
 # Clipboard manager
 exec /usr/bin/clipit &
-# Rtorrent
-exec /home/admin/bin/startrtorrentinscreen  &
-# Owncloud client
+# nextcloud client
 exec /usr/bin/nextcloud &
 # KeepassX
-exec /usr/bin/keepassx -min -lock &
+exec /usr/bin/keepassx2 &
 # Hexchat
 exec /usr/bin/hexchat &
-# Messenger
-exec /opt/messengerfordesktop/messengerfordesktop &
+# Thunderbird
+exec /usr/bin/thunderbird &
+# Pomodoro
+exec /usr/bin/gnome-pomodoro &
 # SysTray
 exec /usr/bin/trayer --widthtype request --align right --edge top --height 20 --distance 42 --transparent true --alpha 255 --padding 0 &
 

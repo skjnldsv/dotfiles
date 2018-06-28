@@ -11,21 +11,28 @@ bspc config gapless_monocle			true
 bspc config click_to_focus 			true
 #bspc config single_monocle			true
 
-bspc monitor -d        
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_corner
+
+bspc monitor -d browser browser2 games media design code github terminal folder messenger irc other
 #bspc monitor -d 1 2 3 4 5 6
 
 bspc rule -a chromium desktop=^1
-bspc rule -a Vlc desktop=^2
-bspc rule -a Brackets desktop=^3 state=tiled
-bspc rule -a "Messenger for Desktop" desktop=^6
-bspc rule -a Hexchat desktop=^7
+bspc rule -a Vlc desktop=^4
+bspc rule -a Gimp desktop=^5
+bspc rule -a Code desktop=^6 state=tiled
+bspc rule -a Atom desktop=^6 state=tiled
+bspc rule -a Hexchat desktop=^11
+bspc rule -a Thunderbird desktop=^10
 bspc rule -a Ristretto state=floating
 bspc rule -a Gthumb state=floating
-bspc rule -a File-roller state=floating
+#bspc rule -a Gnome-pomodoro state=floating
 bspc rule -a Xarchiver state=floating
-bspc rule -a Keepassx state=floating
+bspc rule -a Keepassx2 state=floating
 bspc rule -a Oblogout state=fullscreen
-bspc rule -a Whatsie floating=off desktop=^6
+bspc rule -a Plexamp state=floating sticky=on
+bspc rule -a File-roller state=floating
 
 # Lemonbar
-/home/admin/.bar/panel &
+polybar admin &
