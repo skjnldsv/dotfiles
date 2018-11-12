@@ -49,7 +49,7 @@ font-3 = meteofontastic:size=10;1
 
 modules-left = bspwm xwindow
 modules-center = network
-modules-right = filesystem-root filesystem-home filesystem-raid cpu temperature nvidia memory mail github update iplocation volume weather date powermenu
+modules-right = filesystem-root filesystem-home filesystem-raid cpu temperature nvidia memory mail github update iplocation volume weather date powermenu lock
 
 ;tray-position = right
 ;tray-padding = 2
@@ -208,7 +208,7 @@ click-left = oblogout
 [module/lock]
 type = custom/script
 exec = echo 
-click-left = lock
+click-left = betterlockscreen -l
 
 [module/github]
 type = internal/github
@@ -253,6 +253,33 @@ label-padding = 0
 format-connected-foreground = ${colors.foreground-icons}
 format-disconnected-foreground = ${colors.alert}
 interval = 0.5
+
+[module/wireless-network]
+type = internal/network
+interface = wlp1s0
+interval = 3.0
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = %essid% - %signal%
+label-disconnected = -
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-icons}
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+poll-interval = 5
+format-charging = <label-charging>
+format-full = <label-full>
+format-discharging = <label-discharging>
+label-charging = %percentage%%
+label-full = full
+label-discharging = %time% %percentage%%
+format-charging-prefix = " "
+format-charging-prefix-foreground = ${colors.foreground-icons}
+
+
 
 [settings]
 screenchange-reload = true

@@ -27,6 +27,7 @@ cp -f ~/.vimrc ~/.dotfiles/
 
 # X
 cp -f ~/.Xresources ~/.dotfiles/
+cp -Rf ~/.Xresources.d/ ~/.dotfiles/
 
 # Colors (base16)
 cp -Rf ~/.colors/ ~/.dotfiles/
@@ -62,16 +63,17 @@ cp -f ~/.config/hexchat/colors.conf ~/.dotfiles/.config/hexchat/colors.conf
 cp -Rf ~/.config/polybar/ ~/.dotfiles/.config/
 
 # Bin various
+cp -f ~/bin/steam ~/.dotfiles/bin/steam
 cp -f ~/bin/setwp ~/.dotfiles/bin/setwp
 cp -f ~/bin/pac-man ~/.dotfiles/bin/pac-man
 cp -f ~/bin/invaders ~/.dotfiles/bin/invaders
+cp -f ~/bin/colorblocks ~/.dotfiles/bin/colorblocks
 cp -f ~/bin/pushdot ~/.dotfiles/bin/pushdot
-cp -f ~/bin/lock.png ~/.dotfiles/bin/lock.png
-cp -f ~/bin/lockblack.png ~/.dotfiles/bin/lockblack.png
 cp -f ~/bin/openmail ~/.dotfiles/bin/openmail
 cp -f ~/bin/opengithub ~/.dotfiles/bin/opengithub
 cp -f ~/bin/getWeather.sh ~/.dotfiles/bin/getWeather.sh
 cp -f ~/bin/getIp.sh ~/.dotfiles/bin/getIp.sh
+cp -f ~/bin/pomodoro.sh ~/.dotfiles/bin/pomodoro.sh
 
 ## Obfuscate sensible data
 sed -r "s#'''[a-z]{9,20}@gmail\.com'''#'''xxxxxxxxxxx@gmail.com'''#g" -i ~/.dotfiles/.config/polybar/config
@@ -85,6 +87,9 @@ cp -f ~/.wallpaper ~/.dotfiles/.wallpaper
 
 # Xinitrc
 cp -f ~/.xinitrc ~/.dotfiles/.xinitrc
+
+# Tray
+cp -f ~/.stalonetrayrc ~/.dotfiles/
 
 # Oblogout
 cp -f /etc/oblogout.conf ~/.dotfiles/etc/oblogout.conf

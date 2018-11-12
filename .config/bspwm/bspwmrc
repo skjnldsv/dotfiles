@@ -21,7 +21,7 @@ bspc monitor -d browser browser2 games media design code github terminal folder 
 bspc rule -a chromium desktop=^1
 bspc rule -a Vlc desktop=^4
 bspc rule -a Gimp desktop=^5
-bspc rule -a Code desktop=^6 state=tiled
+bspc rule -a code desktop=^6 state=tiled
 bspc rule -a Atom desktop=^6 state=tiled
 bspc rule -a Hexchat desktop=^11
 bspc rule -a Thunderbird desktop=^10

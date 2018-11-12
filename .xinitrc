@@ -36,8 +36,6 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-# Gnome keyring
-
 numlockx
 xsetroot -cursor_name left_ptr
 
@@ -70,7 +68,7 @@ exec /usr/bin/thunderbird &
 # Pomodoro
 exec /usr/bin/gnome-pomodoro &
 # SysTray
-exec /usr/bin/trayer --widthtype request --align right --edge top --height 20 --distance 42 --transparent true --alpha 255 --padding 0 &
+exec stalonetray
 
 # Bspwm & keyboard shortcuts
 exec sxhkd &
