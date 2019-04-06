@@ -46,9 +46,6 @@ xsetroot -cursor_name left_ptr
 _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_AWT_WM_NONREPARENTING
 
-# Nvidia hack
-nvidia-settings -a GpuPowerMizerMode=1
-
 # Compositor vsync and tear-free
 exec /usr/bin/compton --config .config/compton.conf -b &
 # Redshift
@@ -68,7 +65,7 @@ exec /usr/bin/thunderbird &
 # Pomodoro
 exec /usr/bin/gnome-pomodoro &
 # SysTray
-exec stalonetray
+exec stalonetray &
 
 # Bspwm & keyboard shortcuts
 exec sxhkd &

@@ -26,3 +26,7 @@ export SYSTEMD_EDITOR=$VISUAL
 # ZSH reset
 export ZSH=/home/admin/.oh-my-zsh
 export ZSH_CACHE_DIR=$ZSH/cache
+
+########################
+# Android studio
+export ANDROID_HOME=/home/admin/.android/sdk

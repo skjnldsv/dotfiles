@@ -20,10 +20,12 @@ bspc monitor -d browser browser2 games media design code github terminal folder 
 
 bspc rule -a chromium desktop=^1
 bspc rule -a Vlc desktop=^4
+bspc rule -a Spotify desktop=^4
 bspc rule -a Gimp desktop=^5
 bspc rule -a code desktop=^6 state=tiled
 bspc rule -a Atom desktop=^6 state=tiled
 bspc rule -a Hexchat desktop=^11
+bspc rule -a Gnome-pomodoro desktop=^12
 bspc rule -a Thunderbird desktop=^10
 bspc rule -a Ristretto state=floating
 bspc rule -a Gthumb state=floating
@@ -31,8 +33,8 @@ bspc rule -a Gthumb state=floating
 bspc rule -a Xarchiver state=floating
 bspc rule -a Keepassx2 state=floating
 bspc rule -a Oblogout state=fullscreen
-bspc rule -a Plexamp state=floating sticky=on
 bspc rule -a File-roller state=floating
+bspc rule -a stalonetray state=floating sticky=on
 
 # Lemonbar
 polybar admin &
