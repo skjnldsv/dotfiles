@@ -1,5 +1,5 @@
 # Skjnldsv's dotfiles
-------------------------
+
 ![screenshot1](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot1.png)
 ![screenshot2](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot2.png)
 ![screenshot3](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot3.png)
@@ -7,8 +7,7 @@
 Lockscreen gif
 ![screenvid](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenvid.gif)
 
-------------------------
-##Requirements:
+## Requirements:
 - bspwm
 - sxhkdr
 - lemonbar
@@ -24,7 +23,7 @@ Lockscreen gif
 
 **I'm starting my own programs on boot in the bspwm config file. Obviously you're not forced to use them. Remember to disable the unused lines!**
 
-##I'm also using:
+## I'm also using:
 - Code-OSS
 - Sublime text 3 ([base16 theme github][base16-subl])
 - xfce4-terminal ([base16 theme github][base16-term])
@@ -32,7 +31,7 @@ Lockscreen gif
 - keepassx
 - [redshift][redshift]
 
-##Features:
+## Features:
 - Click to switch desktop
 - Scroll to switch desktop
 - Scroll to volume up/down
@@ -42,7 +41,7 @@ Lockscreen gif
 - Click to open github notifications
 - Click on the ip to random switch openvpn ***(script made by me, not public for security reasons)***
 
-##Themes:
+## Themes:
 - **Theme**: Numix Dark
 - **Icons**: Numix
 - **Colors**: [base16][base16]
