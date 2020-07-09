@@ -1,5 +1,5 @@
 # Skjnldsv's dotfiles
-------------------------
+
 ![screenshot1](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot1.png)
 ![screenshot2](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot2.png)
 ![screenshot3](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenshot3.png)
@@ -7,16 +7,15 @@
 Lockscreen gif
 ![screenvid](https://raw.githubusercontent.com/skjnldsv/dotfiles/master/Screenvid.gif)
 
-------------------------
-##Requirements:
+## Requirements:
 - bspwm
 - sxhkdr
 - lemonbar
 - pulseaudio-ctl
 - conky
-- trayer
+- polybar
 - feh
-- [i3lock-color][i3lock-color] ([aur][aur-i3lock])
+- betterlockscreen ([github][betterlockscreen])
 - oblogout
 - xautolock
 - notify-send
@@ -24,17 +23,15 @@ Lockscreen gif
 
 **I'm starting my own programs on boot in the bspwm config file. Obviously you're not forced to use them. Remember to disable the unused lines!**
 
-##I'm also using:
-- Brackets
-- Sublime text 3 (+[base16 theme][base16-subl])
-- xfce4-terminal (+[base16 theme][base16-term])
-- [messengerfordesktop][messengerfordesktop]
+## I'm also using:
+- Code-OSS
+- Sublime text 3 ([base16 theme github][base16-subl])
+- xfce4-terminal ([base16 theme github][base16-term])
 - clipit
-- veracrypt
 - keepassx
 - [redshift][redshift]
 
-##Features:
+## Features:
 - Click to switch desktop
 - Scroll to switch desktop
 - Scroll to volume up/down
@@ -44,7 +41,7 @@ Lockscreen gif
 - Click to open github notifications
 - Click on the ip to random switch openvpn ***(script made by me, not public for security reasons)***
 
-##Themes:
+## Themes:
 - **Theme**: Numix Dark
 - **Icons**: Numix
 - **Colors**: [base16][base16]
@@ -53,8 +50,6 @@ Lockscreen gif
 [base16-subl]: https://github.com/chriskempson/base16-textmate
 [base16-term]: https://github.com/chriskempson/base16-xfce4-terminal
 [base16]: https://github.com/chriskempson/base16
-[messengerfordesktop]: https://github.com/Aluxian/Facebook-Messenger-Desktop
 [redshift]: http://jonls.dk/redshift/
-[i3lock-color]: https://github.com/eBrnd/i3lock-color
-[aur-i3lock]: https://aur.archlinux.org/packages/i3lock-color-git/
+[betterlockscreen]: https://github.com/pavanjadhaw/betterlockscreen
 [jq]: https://stedolan.github.io/jq/
