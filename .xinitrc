@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -39,27 +39,28 @@ fi
 numlockx
 xsetroot -cursor_name left_ptr
 
-#Wallpaper
+# Wallpaper
 /usr/bin/feh --bg-scale ~/.wallpaper
 
-#Android
+# Android
 _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_AWT_WM_NONREPARENTING
 
+# Icc profile
+/usr/bin/xcalib -d :0 "$HOME/.local/share/DisplayCAL/storage/LS27R75 #1 2019-09-22 15-17 120cdm² D6500 2.2 M-S XYZLUT+MTX/LS27R75 #1 2019-09-22 15-17 120cdm² D6500 2.2 M-S XYZLUT+MTX.icc"
+
 # Compositor vsync and tear-free
-exec /usr/bin/compton --config .config/compton.conf -b &
+exec /usr/bin/picom -b &
 # Redshift
 exec /usr/bin/redshift-gtk &
 # Chromium
-exec /usr/bin/chromium --disk-cache-dir=/tmp/cache &
+exec /usr/bin/brave --disk-cache-dir=/tmp/cache &
 # Clipboard manager
 exec /usr/bin/clipit &
 # nextcloud client
 exec /usr/bin/nextcloud &
 # KeepassX
-exec /usr/bin/keepassx2 &
-# Hexchat
-exec /usr/bin/hexchat &
+exec /usr/bin/keepassxc &
 # Thunderbird
 exec /usr/bin/thunderbird &
 # Pomodoro

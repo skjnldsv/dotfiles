@@ -10,7 +10,7 @@ mkdir -p ~/.dotfiles/.config/gtk-3.0/
 mkdir -p ~/.dotfiles/.config/sublime-text-3/Packages/User/
 mkdir -p ~/.dotfiles/.config/xfce4/terminal/
 mkdir -p ~/.dotfiles/.config/hexchat/
-mkdir -p ~/.dotfiles/.config/Brackets/
+mkdir -p ~/.dotfiles/.config/picom/
 mkdir -p ~/.dotfiles/.local/share/fonts/
 mkdir -p ~/.dotfiles/.colors/
 mkdir -p ~/.dotfiles/.themes/Oblogout/
@@ -39,7 +39,7 @@ cp -f ~/.local/share/fonts/meteofontastic.ttf ~/.dotfiles/.local/share/fonts/
 cp -f ~/.local/share/fonts/meteofontastic.svg ~/.dotfiles/.local/share/fonts/
 
 # Compton
-cp -f ~/.config/compton.conf ~/.dotfiles/.config/
+cp -f ~/.config/picom/picom.conf ~/.dotfiles/.config/picom/
 
 # Bspwm
 cp -f ~/.config/bspwm/bspwmrc ~/.dotfiles/.config/bspwm/bspwmrc

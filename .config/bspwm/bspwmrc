@@ -1,24 +1,23 @@
 #! /bin/sh
 
+bspc config remove_disabled_monitors	true
+bspc config remove_unplugged_monitors	true
+bspc monitor -d browser browser2 games media design code github terminal folder messenger irc other
+
 bspc config border_width			0
 bspc config window_gap				20
 
 bspc config split_ratio				0.52
 bspc config borderless_monocle		true
 bspc config gapless_monocle			true
-#bspc config focus_by_distance		true
-#bspc config history_aware_focus		true
-bspc config click_to_focus 			true
-#bspc config single_monocle			true
+bspc config click_to_focus			any
 
-bspc config pointer_modifier mod1
-bspc config pointer_action1 move
-bspc config pointer_action2 resize_corner
-
-bspc monitor -d browser browser2 games media design code github terminal folder messenger irc other
-#bspc monitor -d 1 2 3 4 5 6
+bspc config pointer_modifier	mod1
+bspc config pointer_action1		move
+bspc config pointer_action2		resize_corner
 
 bspc rule -a chromium desktop=^1
+bspc rule -a Brave-browser desktop=^1
 bspc rule -a Vlc desktop=^4
 bspc rule -a Spotify desktop=^4
 bspc rule -a Gimp desktop=^5
@@ -29,12 +28,12 @@ bspc rule -a Gnome-pomodoro desktop=^12
 bspc rule -a Thunderbird desktop=^10
 bspc rule -a Ristretto state=floating
 bspc rule -a Gthumb state=floating
-#bspc rule -a Gnome-pomodoro state=floating
 bspc rule -a Xarchiver state=floating
-bspc rule -a Keepassx2 state=floating
+bspc rule -a keepassxc state=floating
 bspc rule -a Oblogout state=fullscreen
 bspc rule -a File-roller state=floating
-bspc rule -a stalonetray state=floating sticky=on
+bspc rule -a stalonetray state=floating sticky=on focus=off
+bspc rule -a Plexamp state=floating
 
 # Lemonbar
 polybar admin &

@@ -97,3 +97,4 @@ source $ZSH/oh-my-zsh.sh
 
 # added by travis gem
 [ -f /home/admin/.travis/travis.sh ] && source /home/admin/.travis/travis.sh
+source /usr/share/nvm/init-nvm.sh

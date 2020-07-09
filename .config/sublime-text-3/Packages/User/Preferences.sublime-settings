@@ -6,5 +6,6 @@
 	[
 		"Vintage"
 	],
-	"theme": "Default.sublime-theme"
+	"theme": "Default.sublime-theme",
+	"update_check": false
 }
