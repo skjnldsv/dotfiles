@@ -34,7 +34,7 @@ fuzzy_edges 0
 
 # geometry <geometry>        # tray's geometry in standard X notation; width and
                              # height are specified in slot_size multiples
-geometry 1x1+2525+44
+geometry 1x1+2540+44
 
 # grow_gravity <gravity>     # one of N, S, E, W, NW, NE, SW, SE; tray will grow
                              # in the direction opposite to one specified by
@@ -120,7 +120,7 @@ vertical false
 
 # window_layer <layer>       # set the EWMH-compatible window layer; one of:
                              # bottom, normal, top
-window_layer bottom
+window_layer top
 
 # window_strut <mode>        # enable/disable window struts for tray window (to
                              # avoid converting of tray window by maximized
@@ -131,7 +131,7 @@ window_strut auto
 
 # window_type <type>         # set the EWMH-compatible window type; one of:
                              # desktop, dock, normal, toolbar, utility
-window_type toolbar
+window_type dock
 
 # xsync [<bool>]             # whether to operate on X server synchronously (SLOOOOW)
 xsync false

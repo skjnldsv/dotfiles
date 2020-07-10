@@ -29,7 +29,7 @@ super + alt + Return
 
 # program launcher
 super + space
-	dmenu_run -l 0 -x 20 -y 42 -w 2520 -h 20 -fn "Droid Sans-8" -o 0.60 -nb "#181818" -nf "#d8d8d8" -sb "#585858" -sf "#7cafc2" -p ">" -q -i -class "dmenu"
+	dmenu_run -l 0 -x 0 -y 42 -w 2560 -h 20 -fn "Droid Sans-8" -o 0.60 -nb "#181818" -nf "#d8d8d8" -sb "#585858" -sf "#7cafc2" -p ">" -q -i -class "dmenu"
 
 
 # make sxhkd reload its configuration files:
